@@ -1,6 +1,4 @@
 /*
- * Copyright (c) 2016 The CyanogenMod Project
- *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,25 +13,21 @@
  * limitations under the License.
  */
 
-package org.lineageos.pocketmode;
+package com.custom.ambient.display;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.UserHandle;
 import android.util.Log;
 
-public class Startup extends BroadcastReceiver {
+public class BootCompletedReceiver extends BroadcastReceiver {
 
-    private static final String TAG = "XiaomiPocketMode";
+    private static final boolean DEBUG = false;
+    private static final String TAG = "XiaomiDoze";
 
     @Override
-    public void onReceive(Context context, Intent intent) {
-        final String action = intent.getAction();
-        if (lineageos.content.Intent.ACTION_INITIALIZE_LINEAGE_HARDWARE.equals(action)) {
-            Log.d(TAG, "Starting");
-            context.startServiceAsUser(new Intent(context, PocketModeService.class),
-                    UserHandle.CURRENT);
-        }
+    public void onReceive(final Context context, Intent intent) {
+        if (DEBUG) Log.d(TAG, "Received boot completed intent");
+        Utils.checkDozeService(context);
     }
 }
