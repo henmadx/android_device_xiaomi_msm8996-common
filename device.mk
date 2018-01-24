@@ -109,6 +109,12 @@ PRODUCT_COPY_FILES += \
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    antradio_app \
+    libantradio
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
