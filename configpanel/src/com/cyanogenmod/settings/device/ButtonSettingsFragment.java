@@ -40,6 +40,7 @@ public class ButtonSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {
 
     private Preference mKcalPref;
+    private SwitchPreference mHomeButtonSwitch;
     private VibratorStrengthPreference mVibratorStrength;
 
     @Override
@@ -62,6 +63,11 @@ public class ButtonSettingsFragment extends PreferenceFragment
                  return true;
              }
         });
+
+        mVibratorStrength = (VibratorStrengthPreference) findPreference("vibrator_key");
+        if (mVibratorStrength != null) {
+            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+        }
     }
 
     @Override

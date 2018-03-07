@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -57,7 +57,7 @@ public class VibratorStrengthPreference extends DialogPreference implements
 
     public VibratorStrengthPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);                
+        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     public boolean onDisplayPreferenceDialog(Preference preference) {
@@ -67,13 +67,13 @@ public class VibratorStrengthPreference extends DialogPreference implements
         	mMaxValue = Integer.parseInt(Utils.getFileValue(FILE_MAX, "100"));
         	offset = mMaxValue/100f;
 
-            View view = LayoutInflater.from(getContext()).inflate(R.layout.preference_dialog_vibrator_strength, null);            
+            View view = LayoutInflater.from(getContext()).inflate(R.layout.preference_dialog_vibrator_strength, null);
             mSeekBar = (SeekBar)view.findViewById(R.id.seekbar);
             mValueText = (TextView) view.findViewById(R.id.current_value);
 
             mSeekBar.setMax(mMaxValue - mMinValue);
             mSeekBar.setProgress(mOldStrength - mMinValue);
-            mValueText.setText(Integer.toString(Math.round(mOldStrength / offset)) + "%");            
+            mValueText.setText(Integer.toString(Math.round(mOldStrength / offset)) + "%");
             mSeekBar.setOnSeekBarChangeListener(this);
 
             new AlertDialog.Builder(getContext())
@@ -131,14 +131,14 @@ public class VibratorStrengthPreference extends DialogPreference implements
             return;
         }
 
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_VIBSTRENGTH, "100"); 
+        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(KEY_VIBSTRENGTH, "100");
         Utils.writeValue(FILE_LEVEL, storedValue);
     }
 
     public void onProgressChanged(SeekBar seekBar, int progress,
             boolean fromTouch) {
         setValue(String.valueOf(progress + mMinValue));
-        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)) + "%");        
+        mValueText.setText(Integer.toString(Math.round((progress + mMinValue) / offset)) + "%");
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {
@@ -159,3 +159,4 @@ public class VibratorStrengthPreference extends DialogPreference implements
         setNegativeButtonText(android.R.string.cancel);
     }
 }
+
