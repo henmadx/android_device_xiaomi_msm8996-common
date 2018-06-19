@@ -20,6 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
     audio.offload.min.duration.secs=15 \
     audio.offload.video=true \
+    hpx_send_params=1 \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
@@ -28,6 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=7 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
+    use.dts_eagle=true \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio_hal.period_size=192 \
@@ -41,7 +43,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.parser.ip.buffer.size=262144 \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
+    vendor.audio.use.dts_eagle=true \
     vendor.voice.path.for.pcm.voip=true
+
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
