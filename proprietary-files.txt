@@ -1,15 +1,19 @@
-# ADSP - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
-vendor/bin/adsprpcd|8b439846f016decb7519e5fd5cb2c86e192af036
-vendor/lib64/libadsprpc.so|66ac8f836101bc7563432d168890827d878acd42
-vendor/lib64/libadsp_default_listener.so|d28ea3a0509c13ff75c700efe1107bb2d2481eb6
-vendor/lib64/libfastcvadsp_stub.so|0cbdc83819780d8aa7cb8707633439db330b655d
-vendor/lib64/libfastcvopt.so|39423b9830f4eee217d9a4064a0c7449ff78acfb
-vendor/lib/libadsprpc.so|756fc8ea0395866ee578030ac72fddedba288f97
-vendor/lib/libadsp_default_listener.so|ca63c1b2c34bbde74c2b1fc6009ca244a1ffa535
-vendor/lib/libadsp_hvx_callback_skel.so|dc7080c68699f69f76260891ebcedcd68a093d40
-vendor/lib/libadsp_hvx_stub.so|4fa14ca235ace82551549b571f767f475fbf4b67
+# ADSP - from LA.UM.7.5.r1-04800-8x96.0
+vendor/bin/adsprpcd|ef200e3bce4429fd9461c74330a003f069ffd5b3
+vendor/lib64/libcdsprpc.so|eff806038c24c25eb0146559c72b1fa4ae3cc8a5
+vendor/lib64/libsdsprpc.so|1e2d86912624b37622ea7a5314be57fae95d6a4d
+vendor/lib64/libadsprpc.so|bc7504a5c64c73748927404be5ccfe4015146d25
+vendor/lib64/libadsp_default_listener.so|e1d57433c5af24e3227b679367c133dde1014714
+vendor/lib64/libfastcvadsp_stub.so|e25929713605e70417dee54b362b98d04a860f47
+vendor/lib64/libfastcvopt.so|28fa9dc4b44e86a9c1e722e5705adf047dd35d50
+vendor/lib/libadsprpc.so|76cf6bd3975e933f1bec55499da3c3e7a17a9e6d
+vendor/lib/libadsp_default_listener.so|d9de89d55eba2d35a7583584b51335a663705fa7
+vendor/lib/libadsp_hvx_callback_skel.so|b7e47d8d0c011caea30daf974de81eb01bb90268
+vendor/lib/libadsp_hvx_stub.so|5842e47b5929e15c8b63f1aa4795ca3432debebb
+vendor/lib/libfastcvopt.so|797b9843ccc1f650d66831d645db2bc96b89c299
 vendor/lib/libfastcvadsp_stub.so|7811d12d68ec3f9fcbd05f55264b6dcec61bc75b
-vendor/lib/libfastcvopt.so|d76563220d8d504a9dce1091a52482a8d932858d
+vendor/lib/libcdsprpc.so|a4b6ee7be7170ce6cbd347cde06754f6759d2608
+vendor/lib/libsdsprpc.so|1bf2e7c12be0cf22a0cb8b1d960e609e5722c950
 
 # ADSP modules - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so|8305c614ebf13f84f15989631b8fdfdb9828d9be
@@ -28,15 +32,12 @@ vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|99752b14bc669589f598b2c555af9
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|d2174a2a4a680e93ee4262b5e6d99fd3c398620c
 vendor/lib/rfsa/adsp/libscveT2T_skel.so|487f830aca26c85ef79c8b599b2f03668ab732b5
 
-# ANT+ (system) - from enchilada - PKQ1.180716.001
-lib64/com.qualcomm.qti.ant@1.0.so|199481b290856fb63f5c5bf6def426b43309becb
--lib64/libantradio.so|fb958cb68c99c71455f969afdf96225f5110f0df
-lib/com.qualcomm.qti.ant@1.0.so|fcd6a7130c480bfe4e4d9cc00702ed8444cddc82
--lib/libantradio.so|7506f2577f2f1068688b623ca85e432be9c3dac9
-
-# ANT+ (vendor)
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
-vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
+# ANT+ from LA.UM.7.5.r1-04000-8x96.0
+lib64/com.qualcomm.qti.ant@1.0.so|f764999a53054c78f9e8a6f1d1bfcad3d446fb02
+-lib64/libantradio.so|247bf6302abcbc55e0006aa7032097069a7a2f96
+-lib/libantradio.so|4f03cc258ec1806ddb7100252e2b8e6433693027
+vendor/lib64/com.qualcomm.qti.ant@1.0.so|f764999a53054c78f9e8a6f1d1bfcad3d446fb02
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|8ce47bae3b903a56697c69b416927e569d7e7b80
 
 # Audio libraries - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
 etc/permissions/audiosphere.xml|3c6d8f14bd99e52a424282fd5d0a5b9b06485dea
@@ -74,8 +75,7 @@ vendor/lib/libmdsprpc.so|e4f96f313d58eeb845e5f65815f0d5871cdabfbd
 vendor/lib/libqtigef.so|adf2bfcc4892e4d09d197e6643f639a429fea882
 
 # Bluetooth - from LA.UM.7.5.r1-04800-8x96.0
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|70d45813c07050fc19969db8a1dcef32432ce62e
-vendor/bin/wcnss_filter|65c276e8ed95b55d337534411add48806e034a84
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|e29484b7d03c9e47fbb264e2f3b272bf80db8d0d
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|00015214071f7e8cdf5c9adcffcbd79a08799030
 vendor/lib64/libbtnv.so|b5fc1d89ca68a5e39984b375ed308eb040007c73
@@ -364,7 +364,7 @@ vendor/lib64/vendor.qti.gnss@1.1.so|a622c409e1d20d2799904e47d8fb07753e830d7a
 vendor/lib64/vendor.qti.gnss@1.2.so|104f245c358ab202a57211f99898406cd5ad8e0e
 vendor/lib64/vendor.qti.gnss@2.0.so|b3f7ae76d4db00edce0c4f5a7084d7abeac0180a
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
--framework/com.qti.location.sdk.jar|638c7e521d669ee210a1cce7f83bb3e26ff5ebac
+-framework/com.qti.location.sdk.jar|ad4ee06ff8ce36899faebd31d6453b74c5154cdb
 
 # Graphics - from LA.UM.7.5.r1-04800-8x96.0
 vendor/lib64/egl/eglSubDriverAndroid.so|74d486294baa0258bd066de78a4f953a396da1d7
@@ -439,7 +439,7 @@ vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 
 # IMS
--priv-app/ims/ims.apk
+-priv-app/ims/ims.apk|e601112f50eef846e8672eb03bcbc6e472b927c1
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
 etc/permissions/com.qualcomm.qti.imscmservice.xml
@@ -553,17 +553,11 @@ vendor/lib64/libqti-perfd-client.so|1e84aa49a8cff0f69f0261c69dd8843534efd79e
 vendor/bin/energy-awareness|3f1aa4d518ff361aa3ed9e41ace3e16d36cf0bbe
 
 # Perfconfigs
-vendor/etc/perf/perfboostsconfig.xml|d5f3717c0d949ad1920701b38715fbca2bb7f23c
-vendor/etc/perf/commonresourceconfigs.xml|9a55f58ff268e4f51077e23adfc78a0b758a0da9
-vendor/etc/perf/targetconfig.xml|9cb32494402cc5d30b67b0f5dbaf43cf17f28944
+vendor/etc/perf/perfboostsconfig.xml|57ab3e5177690fdb32908ff217853bb459b73a1e
+vendor/etc/perf/commonresourceconfigs.xml|7bf6b442875ec6244db05ffcc2ebb85a1c370863
+vendor/etc/perf/targetconfig.xml|3e53c5ab21c0e64c71facd37c66e638f6ca71a40
 vendor/etc/perf/targetresourceconfigs.xml|ab576578f1bcb02115b8a30d4a109d660d2e6fb6
 vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
-vendor/etc/perf/perf-profile1.conf|4056b772f2790ffd2f466275be8f03e4a796b55c
-vendor/etc/perf/perf-profile2.conf|66ac3877bf0030b72c99107f665bb392538d0237
-vendor/etc/perf/perf-profile3.conf|91fc5322ecee2985f128049b0d44e2bee0b3be78
-vendor/etc/perf/perf-profile4.conf|8cb4e9a968ae7e8918be60f10ea55da89b640d99
-vendor/etc/perf/perf-profile5.conf|e2352fb4d9a1ea711b476df58c762f74c959e2c1
-vendor/etc/perf/perf-profile6.conf|910a193b8425bbe0080f746d6788e66986b2e762
 
 # Peripheral manager - from LA.UM.7.5.r1-04800-8x96.0
 vendor/bin/pm-proxy|83c3adde4167fe4d5874dc49312c3e7ffdea31a5
@@ -652,7 +646,7 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/QtiTelephonyServicelibrary.jar
 framework/qcrilhook.jar
-framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
+framework/qti-telephony-common.jar|9aa88e7f3166d86da217d688b003c2ecf2840acf
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -691,14 +685,12 @@ vendor/radio/qcril_database/qcril.db
 vendor/bin/sensors.qti|18011d46135a2635bcfdc34e8b4d3fdaff7a76fb
 vendor/etc/sensors/hals.conf|bf3677cbfa5ce5735662e8c259cb027969f65c87
 vendor/etc/sensors/sensor_def_qcomdev.conf|b0d21e39bf33cf88a76d70871cb281cf8c0ac3f6
-vendor/lib/libsdsprpc.so|6ab1f21553ca33514958cdd501c672eab9838e6c
 vendor/lib/libsensor1.so|d73573eca4e1eaf52f09f9cc7292cdc6d9d69c70
 vendor/lib/libsensor_reg.so|2d95cea1df93dcaae0f067157f6932c1381dec53
 vendor/lib/libsensor_cit.so|154e5f5f6f0f6bf0342768814542d1e6ce1c4a6d
 vendor/lib/libsensor_crosstalk.so|0654699d57a1c278ad72c29007b913f61dda3385
 vendor/lib/libsensor_test.so|ddb9a546d5ceaa0e51f71b59851ff3edc0b29a9c
 vendor/lib/libsensor_user_cal.so|d86ae521c74f9a65cafc219f98d61c16059ad46b
-vendor/lib64/libsdsprpc.so|fc1325b8e76a125f6608a0086712dba894151c11
 vendor/lib64/libsensor1.so|1934268e2f28ee9d705d5ff060544d06e42afcc3
 vendor/lib64/libsensor_reg.so|942fbf9ef1cfc87596f850e7ff1a86e7a9ddc846
 vendor/lib64/sensors.ssc.so|e49e3c585da09b323948e1c1201118d426f3d558
@@ -810,3 +802,4 @@ lib64/libqti_performance.so|9c88af412e0276c578f06e1069b6c3aeae7e3f8d
 
 #Hexagon controller
 vendor/lib64/libhexagon_nn_controller.so
+
