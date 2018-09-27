@@ -72,7 +72,6 @@ vendor/lib/libqtigef.so|adf2bfcc4892e4d09d197e6643f639a429fea882
 
 # Bluetooth - from LA.UM.7.5.r1-04800-8x96.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|e29484b7d03c9e47fbb264e2f3b272bf80db8d0d
-vendor/bin/wcnss_filter|65c276e8ed95b55d337534411add48806e034a84
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|00015214071f7e8cdf5c9adcffcbd79a08799030
 vendor/lib64/libbtnv.so|b5fc1d89ca68a5e39984b375ed308eb040007c73
