@@ -58,7 +58,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.gyro.disable=0 \
-    persist.camera.imglib.fddsp=1
+    persist.camera.imglib.fddsp=1 \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
