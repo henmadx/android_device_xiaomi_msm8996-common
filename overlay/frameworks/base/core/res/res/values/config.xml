@@ -336,4 +336,7 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
+    <integer name="config_deviceHardwareKeys">19</integer>
+    <integer name="config_deviceHardwareWakeKeys">69</integer>
+
 </resources>
