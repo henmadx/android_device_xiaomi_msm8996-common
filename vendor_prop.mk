@@ -72,7 +72,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
     persist.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
-    ro.use_data_netmgrd=true
+    ro.use_data_netmgrd=true \
+    persist.data.dpm.enable=true
 
 # Display (Qualcomm AD)
 PRODUCT_PROPERTY_OVERRIDES += \
