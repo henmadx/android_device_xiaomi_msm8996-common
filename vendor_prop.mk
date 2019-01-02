@@ -62,9 +62,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.google.android.GoogleCamera \
     persist.camera.eis.enable=1 
 
-# CNE
+# CNE & DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1
+    persist.vendor.cne.feature=1 \
+    persist.vendor.dpm.feature=5 
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -143,9 +144,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.net.doxlat=true \
     persist.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.add_power_save=true \
+    persist.radio.add_power_save=true \
     persist.radio.force_on_dc=true \
+    persist.vendor.radio.force_on_dc=true \
     persist.radio.multisim.config=dsds \
     persist.radio.redir_party_num=1 \
+    persist.vendor.radio.multisim.config=dsds \
+    persist.vendor.radio.redir_party_num=1 \   
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1
