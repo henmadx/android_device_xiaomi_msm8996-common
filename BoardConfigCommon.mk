@@ -54,16 +54,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CLANG_COMPILE := true
-#TARGET_KERNEL_CLANG_VERSION := 6.0
-TARGET_KERNEL_CLANG_PATH := /root/syb/vendor/qcom/sdclang-6.0/linux-x86/bin
-SDCLANG := true
-SDCLANG_PATH := vendor/qcom/sdclang-6.0/linux-x86/bin
-SDCLANG_LTO_DEFS := vendor/aosp/sdclang/sdllvm-lto-defs.mk
-SDCLANG_COMMON_FLAGS := -O3 -fvectorize
-
-#SDCLANG_PATH := vendor/qcom/sdclang-6.0/linux-x86/bin
-#SDCLANG_LTO_DEFS := vendor/aosp/build/sdclang/sdllvm-lto-defs.mk
-#CLANG_TRIPLE=aarch64-linux-gnu-
+TARGET_KERNEL_CLANG_VERSION := 8.0
+TARGET_KERNEL_CLANG_PATH := $(ANDROID_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/$(TARGET_KERNEL_CLANG_VERSION)/bin
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
