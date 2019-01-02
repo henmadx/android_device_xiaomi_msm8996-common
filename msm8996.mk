@@ -358,6 +358,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Preloading QPerformance jar to ensure faster perflocks in Boost Framework
+PRODUCT_BOOT_JARS += QPerformance
+
+# Preloading UxPerformance jar to ensure faster UX invoke in Boost Framework
+PRODUCT_BOOT_JARS += UxPerformance
+
 # TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
