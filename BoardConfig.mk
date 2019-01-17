@@ -44,7 +44,7 @@ TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
 
 #SDClang
-TARGET_USE_SDCLANG := true
+#TARGET_USE_SDCLANG := true
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(VENDOR_PATH)/vendor_framework_compatibility_matrix.xml
@@ -55,7 +55,7 @@ DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 cma=32M@0-0xffffffff
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
@@ -66,10 +66,10 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := gemini_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-#TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_COMPILE := true
 #TARGET_KERNEL_CLANG_VERSION := 8.0
 #KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-8.x/bin
-#TARGET_KERNEL_CLANG_PATH := $(ANDROID_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/$(TARGET_KERNEL_CLANG_VERSION)/bin
+TARGET_KERNEL_CLANG_PATH := $(ANDROID_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/8.0/bin
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
@@ -236,8 +236,8 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_RIL_VARIANT := caf
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
-#include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+include device/qcom/sepolicy/sepolicy.mk
 
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_gemini
