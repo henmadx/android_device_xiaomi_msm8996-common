@@ -67,6 +67,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_8996
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service.xiaomi_8996
