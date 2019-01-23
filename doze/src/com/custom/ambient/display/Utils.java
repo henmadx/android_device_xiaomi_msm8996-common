@@ -25,8 +25,9 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
-
+import com.android.internal.hardware.AmbientDisplayConfiguration;
 import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
+
 
 public final class Utils {
 
@@ -99,7 +100,7 @@ public final class Utils {
     }
 
     protected static boolean isPickUpEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_PICK_UP_KEY);
+        return isGestureEnabled(context, PICK_UP_KEY);
     }
 
     protected static boolean isHandwaveGestureEnabled(Context context) {

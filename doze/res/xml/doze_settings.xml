@@ -18,18 +18,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <SwitchPreference
-<<<<<<< HEAD
-        android:key="always_on_display"
-        android:disableDependentsState="true"
-        android:title="@string/ambient_display_always_on_title"
-        android:summary="@string/ambient_display_always_on_summary"
-        android:persistent="false" />
-=======
         android:key="ambient_display"
         android:defaultValue="true"
         android:title="@string/ambient_display_title"
         android:summary="@string/ambient_display_summary" />
->>>>>>> 1871f1a... msm8996-common: Remove lineage dependencies from XiaomiDoze
 
     <PreferenceCategory
         android:key="tilt_sensor"
