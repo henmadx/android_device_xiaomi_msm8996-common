@@ -13,18 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
+  ro.af.client_heap_size_kbyte=7168 \
     audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=15 \
+    audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
     hpx_send_params=1 \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.bt.enable.splita2dp=false \
+  persist.vendor.audio.hw.binder.size_kbyte=1024 \
+    ro.af.client_heap_size_kbyte=7168 \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7 \
     ro.vendor.audio.sdk.fluencetype=fluence \
@@ -51,6 +56,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
     qcom.bluetooth.soc=rome \
+  vendor.qcom.bluetooth.soc=rome \
     ro.bluetooth.dun=true \
     ro.bluetooth.hfp.ver=1.7 \
     ro.bluetooth.sap=true \
@@ -68,6 +74,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # CNE & DPM
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.dpm.enable=true  \
     persist.vendor.cne.feature=1 \
     persist.vendor.dpm.feature=9 \
     persist.env.fastdorm.enabled=true
@@ -95,6 +102,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.gralloc.disable_wb_ubwc=1 \
+    vendor.display.disable_skip_validate=1 \
+    vendor.display.rotator_downscale=1 \
+    vendor.display.perf_hint_window=50 \
+    vendor.display.enable_default_color_mode=0
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
@@ -114,7 +130,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.ims_volte_enable=1  \
+    persist.dbg.wfc_avail_ovr=1
+
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -135,7 +154,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.vendor.qti.sys.fw.bg_apps_limit=60
 
-# Priv-app permissions whitelist
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bt.enableAptXHD=true
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -181,6 +201,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=6a00000.dwc3
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.cgroup_follow.enable=true \
+    persist.vendor.qti.inputopts.enable=true \
+    sys.use_fifo_ui=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
