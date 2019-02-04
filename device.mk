@@ -154,6 +154,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8996 \
     libmm-qcamera \
+    SnapdragonCamera
 #    Snap
 
 # Device config scripts
@@ -316,8 +317,8 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # OTA Updates
-PRODUCT_PACKAGES += \
-    Updates
+#PRODUCT_PACKAGES += \
+ #   Updates
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
@@ -356,11 +357,11 @@ PRODUCT_COPY_FILES += \
 
 
 # Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
+#PRODUCT_PACKAGES += \
+ #   telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+ #   telephony-ext
 
 # Thermal
 PRODUCT_PACKAGES += \

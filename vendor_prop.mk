@@ -93,7 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.qfp=false \
     ro.hardware.fingerprint=fpc \
-    sys.fpc.tu.disabled=0
+    sys.fpc.tu.disabled=0 \
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -148,7 +148,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Priv-app permissions whitelist
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.control_privapp_permissions=enforce
+    ro.control_privapp_permissions=log
     
 # Qualcomm BT aptXHD
 PRODUCT_PROPERTY_OVERRIDES += \

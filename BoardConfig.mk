@@ -55,6 +55,7 @@ DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
@@ -65,10 +66,10 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := gemini_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := 8.0
+#TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_VERSION := 8.0
 #KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-8.x/bin
-TARGET_KERNEL_CLANG_PATH := $(ANDROID_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/$(TARGET_KERNEL_CLANG_VERSION)/bin
+#TARGET_KERNEL_CLANG_PATH := $(ANDROID_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/$(TARGET_KERNEL_CLANG_VERSION)/bin
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
@@ -150,6 +151,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
+TARGET_USES_COMMONSYS_DISPLAY_LIBRARY := false
 
 #Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
@@ -166,6 +168,9 @@ TARGET_EXFAT_DRIVER := sdfat
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
+
+# Ipacm
+USE_DEVICE_SPECIFIC_DATA-IPA-CFG-MGR := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -206,7 +211,7 @@ TARGET_USES_MKE2FS := true
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
-TARGET_USES_AOSP := true
+#TARGET_USES_AOSP := true
 TARGET_HAS_NO_WLAN_STATS := true
 
 # QCOM
@@ -227,8 +232,8 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # SELinux
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
-include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
 
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_gemini
@@ -239,6 +244,7 @@ PREBUILT_WEBVIEW_VERSION := chromium
 
 #DEX
 DONT_DEXPREOPT_PREBUILTS := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
