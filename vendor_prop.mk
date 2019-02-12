@@ -56,10 +56,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     media.camera.ts.monotonic=0 \
     persist.camera.HAL3.enabled=1 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
     persist.camera.gyro.disable=0 \
     persist.camera.eis.enable=1 \
-    persist.camera.imglib.fddsp=1
+    persist.camera.imglib.fddsp=1 \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.android.GoogleCameraTele \
+    camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.android.GoogleCameraTele \
+    persist.camera.privapp.list=com.android.camera,com.google.android.GoogleCameraTele,org.codeaurora.snapcam \
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -182,6 +184,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.ignore_dom_time=5 \
     persist.vendor.radio.calls.on.ims=1 \
+    persist.vendor.radio.aosp_usr_pref_sel=true \
     telephony.lteOnCdmaDevice=1 \
     persist.vendor.radio.sib16_support=1
 
