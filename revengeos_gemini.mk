@@ -22,11 +22,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from gemini device
 $(call inherit-product, device/xiaomi/gemini/device.mk)
 
-# Inherit from common Citrus
-$(call inherit-product, vendor/citrus/common.mk)
+# Inherit from common stuff for Revenge
+$(call inherit-product, vendor/revengeos/config/common.mk)
+$(call inherit-product, vendor/revengeos/config/gsm.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_DENSITY := xxhdpi
+TARGET_VENDOR := Xiaomi
+REVENGEOS_BUILDTYPE := OFFICIAL
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := citrus_gemini
+PRODUCT_NAME := revengeos_gemini
 PRODUCT_DEVICE := gemini
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5
@@ -41,7 +47,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "Xiaomi/gemini/gemini:8.0.0/OPR1.170623.032/V9.6.1.0.OAAMIFD:user/release-keys"
-
-TARGET_VENDOR := Xiaomi
-
-TARGET_BOOT_ANIMATION_RES := 1080
