@@ -145,6 +145,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.panel.sh
 
+# CMHW
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -359,11 +364,6 @@ PRODUCT_BOOT_JARS += \
     telephony-ext \
 		tcmiface
 
-# Preloading QPerformance jar to ensure faster perflocks in Boost Framework
-PRODUCT_BOOT_JARS += QPerformance
-
-# Preloading UxPerformance jar to ensure faster UX invoke in Boost Framework
-PRODUCT_BOOT_JARS += UxPerformance
 
 # TextClassifier
 PRODUCT_PACKAGES += \
