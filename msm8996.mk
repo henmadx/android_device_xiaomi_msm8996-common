@@ -391,7 +391,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext \
-		tcmiface
+    tcmiface
 
 
 # TextClassifier
