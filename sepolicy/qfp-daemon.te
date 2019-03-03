@@ -5,7 +5,9 @@ allow qfp-daemon self:socket create_socket_perms;
 allowxperm qfp-daemon self:socket ioctl msm_sock_ipc_ioctls;
 
 allow qfp-daemon captouch_device:chr_file rw_file_perms;
+
 allow qfp-daemon mnt_vendor_file:dir search;
+
 # Access QFP Android Proxy
 allow qfp-daemon qfp_proxy_service:service_manager find;
 
@@ -14,8 +16,6 @@ allow qfp-daemon iqfp_service:service_manager add;
 
 r_dir_file(qfp-daemon, persist_qc_senseid_file)
 r_dir_file(qfp-daemon, sensors_persist_file)
-
-allow qfp-daemon qfp-daemon_data_file:file { create_file_perms };
 
 # Ignore all logging requests
 dontaudit qfp-daemon storage_file:dir search;
