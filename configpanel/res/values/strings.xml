@@ -17,17 +17,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="summary_empty" translatable="false"></string>
-
     <!-- Category title -->
-    <string name="buttons_title">Hadware Buttons</string>
+    <string name="buttons_title">Hadware buttons</string>
     <string name="graphics_title">Graphics</string>
 
     <!-- Application title -->
-    <string name="device_settings_app_name">Device Features</string>
+    <string name="device_settings_app_name">Device features</string>
 
     <!-- Button settings -->
-    <string name="button_panel_title">Device Features</string>
+    <string name="button_panel_title">Device features</string>
     <string name="additional_buttons_title">Additional buttons</string>
 
     <string name="button_swap_title">Swap buttons</string>
@@ -67,5 +65,6 @@
     <string name="vibrator_title">Strength</string>
     <string name="vibrator_summary">Define the strength of the vibrator</string>
     <string name="vibrator_test">Test</string>
+
 
 </resources>
