@@ -19,10 +19,8 @@
         android:key="kcal_enabled"
         android:title="@string/kcal_enabled_title"
         android:summary="@string/kcal_enabled_summary"
-        android:icon="@null"
-        android:paddingLeft="0dp"
         android:persistent="false" />
-    <com.cyanogenmod.settings.device.preference.SeekBarPreference
+    <com.cyanogenmod.settings.device.utils.SeekBarPreference
         android:key="kcal_color_temp"
         android:title="@string/kcal_color_temp"        
         android:dependency="kcal_enabled"
@@ -32,7 +30,7 @@
         app:max_value="7000"
         app:min_value="1000"
         app:default_value="6400"/>
-    <com.cyanogenmod.settings.device.preference.SeekBarPreference
+    <com.cyanogenmod.settings.device.utils.SeekBarPreference
         android:key="kcal_red"
         android:title="@string/kcal_red"        
         android:dependency="kcal_enabled"
@@ -42,7 +40,7 @@
         app:max_value="256"
         app:min_value="0"
         app:default_value="256"/>
-    <com.cyanogenmod.settings.device.preference.SeekBarPreference
+    <com.cyanogenmod.settings.device.utils.SeekBarPreference
         android:key="kcal_green"
         android:title="@string/kcal_green"
         android:dependency="kcal_enabled"
@@ -52,7 +50,7 @@
         app:max_value="256"
         app:min_value="0"
         app:default_value="256"/>
-    <com.cyanogenmod.settings.device.preference.SeekBarPreference
+    <com.cyanogenmod.settings.device.utils.SeekBarPreference
         android:key="kcal_blue"
         android:title="@string/kcal_blue"
         android:dependency="kcal_enabled"
@@ -62,7 +60,7 @@
         app:max_value="256"
         app:min_value="0"
         app:default_value="256"/>
-    <com.cyanogenmod.settings.device.preference.SeekBarPreference
+    <com.cyanogenmod.settings.device.utils.SeekBarPreference
         android:key="kcal_contrast"
         android:title="@string/kcal_contrast"
         android:dependency="kcal_enabled"
@@ -72,7 +70,7 @@
         app:max_value="384"
         app:min_value="128"
         app:default_value="255"/>
-    <com.cyanogenmod.settings.device.preference.SeekBarPreference
+    <com.cyanogenmod.settings.device.utils.SeekBarPreference
         android:key="kcal_saturation"
         android:title="@string/kcal_saturation"
         android:dependency="kcal_enabled"

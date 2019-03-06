@@ -17,17 +17,16 @@
 
 package com.cyanogenmod.settings.device;
 
+import android.app.ActionBar;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.preference.PreferenceActivity;
-import android.preference.SwitchPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceManager;
+import android.support.v14.preference.PreferenceFragment;
+import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.text.TextUtils;
@@ -40,21 +39,23 @@ import com.cyanogenmod.settings.device.preference.VibratorStrengthPreference;
 import com.cyanogenmod.settings.device.utils.FileUtils;
 import com.cyanogenmod.settings.device.utils.Utils;
 
-public class ButtonSettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener{
+public class ButtonSettingsFragment extends PreferenceFragment
+        implements OnPreferenceChangeListener {
 
-	private Preference mKcalPref;
+    private Preference mKcalPref;
     private VibratorStrengthPreference mVibratorStrength;
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.button_panel);
+        final ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         mKcalPref = findPreference("kcal");
                 mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                      @Override
                      public boolean onPreferenceClick(Preference preference) {
-                         Intent intent = new Intent(ButtonSettingsActivity.this, DisplayCalibration.class);
+                         Intent intent = new Intent(getActivity(), DisplayCalibration.class);
                          startActivity(intent);
                          return true;
                      }
@@ -63,7 +64,6 @@ public class ButtonSettingsActivity extends PreferenceActivity implements OnPref
         mVibratorStrength = (VibratorStrengthPreference) findPreference("vibrator_key");
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-            mVibratorStrength.setOnPreferenceChangeListener(this);
         }
     }
 
@@ -75,14 +75,15 @@ public class ButtonSettingsActivity extends PreferenceActivity implements OnPref
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         String node = Constants.sBooleanNodePreferenceMap.get(preference.getKey());
         if (!TextUtils.isEmpty(node)) {
             Boolean value = (Boolean) newValue;
             FileUtils.writeLine(node, value ? "1" : "0");
             if (Constants.FP_WAKEUP_KEY.equals(preference.getKey())) {
-                Utils.broadcastCustIntent(this, value);
+                value &= prefs.getBoolean(Constants.FP_POCKETMODE_KEY, false);
+                Utils.broadcastCustIntent(getContext(), value);
             }
             return true;
         }
@@ -91,7 +92,9 @@ public class ButtonSettingsActivity extends PreferenceActivity implements OnPref
             FileUtils.writeLine(node, (String) newValue);
             return true;
         }
-        if (preference == mVibratorStrength) {
+
+        if (Constants.FP_POCKETMODE_KEY.equals(preference.getKey())) {
+            Utils.broadcastCustIntent(getContext(), (Boolean) newValue);
             return true;
         }
 
@@ -125,6 +128,19 @@ public class ButtonSettingsActivity extends PreferenceActivity implements OnPref
                 l.setEnabled(false);
             }
         }
+
+        // Initialize other preferences whose keys are not associated with nodes
+        SwitchPreference b = (SwitchPreference) findPreference(Constants.FP_POCKETMODE_KEY);
+        b.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            getActivity().onBackPressed();
+            return true;
+        }
+        return false;
     }
 
     private void updatePreferencesBasedOnDependencies() {
@@ -136,17 +152,17 @@ public class ButtonSettingsActivity extends PreferenceActivity implements OnPref
                 String dependencyNodeValue = FileUtils.readOneLine(dependencyNode);
                 boolean shouldSetEnabled = dependencyNodeValue.equals(
                         Constants.sNodeDependencyMap.get(pref)[1]);
-                Utils.updateDependentPreference(this, b, pref, shouldSetEnabled);
+                Utils.updateDependentPreference(getContext(), b, pref, shouldSetEnabled);
             }
         }
     }
 
-    /*@Override
+    @Override
     public void onDisplayPreferenceDialog(Preference preference) {
         if (preference instanceof VibratorStrengthPreference){
             ((VibratorStrengthPreference)preference).onDisplayPreferenceDialog(preference);
         } else {
             super.onDisplayPreferenceDialog(preference);
         }
-    }*/
+    }
 }
