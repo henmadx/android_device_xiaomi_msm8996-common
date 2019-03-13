@@ -110,6 +110,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_HARDWARE_CLASS += \
     $(VENDOR_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+TARGET_HAS_NO_WLAN_STATS := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
@@ -177,7 +178,8 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/bt_firmware:/bt_firmware
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USES_MKE2FS := true
-
+BOARD_PERIODIC_CHORES_INTERVAL_FAST := 60*10
+BOARD_PERIODIC_CHORES_INTERVAL_SLOW := -1
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
