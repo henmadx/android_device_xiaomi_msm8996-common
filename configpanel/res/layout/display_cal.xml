@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
+=======
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:fillViewport="true">
+>>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,6 +20,7 @@
 
         <ImageView
             android:id="@+id/calibration_pic"
+<<<<<<< HEAD
             android:layout_width="fill_parent"
             android:layout_height="265dp"
             android:src="@drawable/calibration_png" />
@@ -31,3 +41,15 @@
     </LinearLayout>
 </LinearLayout>
 
+=======
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:src="@drawable/calibration_png" />
+        <com.cyanogenmod.settings.device.utils.NonScrollListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.cyanogenmod.settings.device.utils.NonScrollListView>
+    </LinearLayout>
+</ScrollView>
+>>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x

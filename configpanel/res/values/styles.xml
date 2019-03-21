@@ -16,7 +16,10 @@
 
 <resources>
     <style name="XiaomiPartsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+<<<<<<< HEAD
         <item name="preferenceTheme">@android:style/Theme.DeviceDefault.Settings</item>
+=======
+>>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
         <item name="android:switchPreferenceStyle">@style/SettingsSwitchPreference</item>
         <item name="android:preferenceCategoryStyle">@style/SettingsPreferenceCategory</item>
         <item name="android:preferenceStyle">@style/SettingsPreference</item>
@@ -51,3 +54,7 @@
 
     <style name="SettingsListPreference" parent="SettingsPreference"/>
 </resources>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x

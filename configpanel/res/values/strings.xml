@@ -17,6 +17,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+<<<<<<< HEAD
+=======
+    <string name="summary_empty" translatable="false"></string>
+
+>>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
     <!-- Category title -->
     <string name="buttons_title">Hadware Buttons</string>
     <string name="graphics_title">Graphics</string>
@@ -47,6 +52,7 @@
     <string name="fingerprint_pocketmode_title">Prevent accidental wake-up</string>
     <string name="fingerprint_pocketmode_summary">Check the proximity sensor prior to wake-ups triggered by the fingerprint sensor</string>
 
+<<<<<<< HEAD
     <!-- Vibrator -->
     <string name="vibrator_category">Vibrator</string>
     <string name="vibrator_title">Strength</string>
@@ -54,6 +60,9 @@
     <string name="vibrator_test">Test</string>
      
     < Kcal -->
+=======
+    <!-- Kcal -->
+>>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
     <string name="kcal_title">Display color</string>
     <string name="kcal_summary">Display color calibration using KCAL</string>
     <string name="kcal_enabled_title">Enable KCAL</string>
@@ -63,6 +72,7 @@
     <string name="kcal_blue">Blue</string>
     <string name="kcal_saturation">Saturation</string>
     <string name="kcal_contrast">Constrast</string>
+<<<<<<< HEAD
 
     <!-- QC3.0 Charge limit -->
     <string name="qc3_category">Charging limit</string>
@@ -80,3 +90,14 @@
     <string name="qc3_3000">3000 ma (Not recommended)</string>
 
 </resources>
+=======
+    <string name="menu_reset">Reset</string>
+    <string name="kcal_color_temp">Color temperature (K)</string>
+
+    <!-- Vibrator -->
+    <string name="vibrator_category">Vibrator</string>
+    <string name="vibrator_title">Strength</string>
+    <string name="vibrator_summary">Define the strength of the vibrator</string>
+    <string name="vibrator_test">Test</string>
+</resources>
+>>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
