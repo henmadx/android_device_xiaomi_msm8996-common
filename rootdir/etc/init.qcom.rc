@@ -131,9 +131,10 @@ on late-fs
     start servicemanager
     start surfaceflinger
     start bootanim
-    start configstore-hal-1-0
-    start gralloc-2-0
-     # mount RW partitions which need run fsck
+    start vendor.hwcomposer-2-1
+    start vendor.configstore-hal
+    start vendor.gralloc-2-0
+    # mount RW partitions which need run fsck
     mount_all /system/vendor/etc/fstab.qcom --late
 
     # boot time fs tune
