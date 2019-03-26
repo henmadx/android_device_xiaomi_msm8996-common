@@ -83,6 +83,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.dpm.enable=true \
     persist.vendor.dpm.feature=5
 
 # DRM
