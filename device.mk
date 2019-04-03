@@ -391,8 +391,6 @@ PRODUCT_PACKAGES += \
     wificond \
     wifilogd \
     hostapd \
-    readfem \
-    readmac \
     wpa_supplicant \
     wpa_supplicant.conf
 
