@@ -228,6 +228,66 @@ on boot
     chown system system /sys/module/msm_core/parameters/disabled
     chown system system /sys/kernel/debug/msm_core/enable
     chown system system /sys/kernel/debug/msm_core/ptable
+ 
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
+
+    # Set schedutil permissions
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "schedutil"
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/schedutil/down_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
+
+    # Set schedutil permissions
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "schedutil"
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/schedutil/down_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/schedutil/down_rate_limit_us
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/schedutil/up_rate_limit_us
+    chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us
+    chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/schedutil/up_rate_limit_us
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/schedutil/down_rate_limit_us    
+    chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us
+    chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/schedutil/down_rate_limit_us
+
+    # Access permission for vibration intensity level
+    chown system system /sys/class/timed_output/vibrator/vtg_level
+    chmod 0660 /sys/class/timed_output/vibrator/vtg_level
+
 
     # Access permission for fingerprint
     chown system system /sys/devices/soc/soc:fpc_fpc1020/irq
@@ -311,7 +371,7 @@ on property:sys.boot_completed=1
     swapon_all /vendor/etc/fstab.qcom
 
     # end boot time fs tune
-    write /sys/block/sda/queue/read_ahead_kb 256
+    write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sda/queue/nr_requests 128
     write /sys/block/dm-0/queue/read_ahead_kb 128
     write /sys/block/dm-1/queue/read_ahead_kb 128
@@ -450,7 +510,6 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
-
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1

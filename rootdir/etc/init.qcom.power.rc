@@ -36,10 +36,11 @@ on init
     chmod 0444 /sys/module/msm_performance/parameters/cpu_max_freq
 
     # Set schedTune boost values (only affects EAS)
-    write /dev/stune/schedtune.sched_boost 10
-    write /dev/stune/rt/schedtune.sched_boost 30
+    write /dev/stune/schedtune.sched_boost 20
+    write /dev/stune/foreground/schedtune.sched_boost 20
+    write /dev/stune/rt/schedtune.sched_boost 50
+    write /dev/stune/top-app/schedtune.sched_boost 30
     write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.boost 10
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
 on boot
@@ -95,16 +96,6 @@ on enable-low-power
     # Set sync wakee policy tunable
     write /proc/sys/kernel/sched_prefer_sync_wakee_to_waker 1
 
-    # Configure governor settings for little cluster (only affects EAS)
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
-
-    # Configure governor settings for big cluster (only affects EAS)
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 20000
-
     # Configure governor settings for little cluster
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
@@ -119,10 +110,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 500
     write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 20000
     write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/iowait_boost_enable 1
-
-    # Re-enable thermal hotplug
-    write /sys/module/msm_thermal/core_control/enabled 1
-
+   
     # Input boost config
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800 2:1324800"
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
@@ -162,9 +150,33 @@ on enable-low-power
     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
     write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 1
+    
+    # Set idle GPU to 133 MHz
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
+    write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 0
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_clock_mhz 133
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 133000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/max_clock_mhz 624
+    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 624000000
 
     # Enable all LPMs (this will enable C4, D4, D3, E4 and M3 LPMs)
     write /sys/module/lpm_levels/parameters/sleep_disabled "N"
+    write /sys/module/workqueue/parameters/power_efficient Y
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sde/queue/read_ahead_kb 128
+    write /sys/block/dm-0/queue/scheduler cfq
+    write /sys/block/sda/queue/scheduler cfq
+    write /sys/block/sde/queue/scheduler cfq
+    write /sys/block/dm-0/queue/iosched/group_idle 0
+    write /sys/block/sda/queue/iosched/group_idle 0
+    write /sys/block/sde/queue/iosched/group_idle 0
+
+    write /sys/module/msm_thermal/core_control/enabled 0
+
+    # Set nice Level to 9
+    write /proc/sys/kernel/sched_upmigrate_min_nice 9
 
     # Set PowerHal properties
     setprop sys.post_boot.parsed 1
@@ -174,15 +186,17 @@ on property:sys.boot_completed=1
 
     # Set I/O squeduler
     setprop sys.io.scheduler "cfq"
+    setprop vendor.powerhal.init 1
 
     # Start I/O prefetcher service
-    start iop
+    #start iop
 
     # Update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-2
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
+    write /dev/cpuset/restricted/cpus 0-1
 
     # Setup permission for powerHAL
     chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
@@ -197,13 +211,7 @@ service charger /sbin/chargeonlymode
     group system graphics
     seclabel u:r:healthd:s0
 
-service energy-awareness /vendor/bin/energy-awareness
-    class main
-    user root
-    group system
-    oneshot
-
 service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
-group system wakelock
+    group system wakelock
