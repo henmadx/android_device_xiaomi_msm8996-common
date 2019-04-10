@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.syberia.settings.device;
+package com.cyanogenmod.settings.device;
 
 import android.content.SharedPreferences;
 import android.content.Intent;
@@ -35,10 +35,10 @@ import android.view.MenuItem;
 
 import java.io.File;
 
-import com.syberia.settings.device.R;
-import com.syberia.settings.device.preference.VibratorStrengthPreference;
-import com.syberia.settings.device.utils.FileUtils;
-import com.syberia.settings.device.utils.Utils;
+import com.cyanogenmod.settings.device.R;
+import com.cyanogenmod.settings.device.preference.VibratorStrengthPreference;
+import com.cyanogenmod.settings.device.utils.FileUtils;
+import com.cyanogenmod.settings.device.utils.Utils;
 
 public class ButtonSettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener{
 
