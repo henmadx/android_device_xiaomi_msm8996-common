@@ -1,4 +1,4 @@
-package com.syberia.settings.device.utils;
+package com.cyanogenmod.settings.device.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;

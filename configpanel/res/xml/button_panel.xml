@@ -56,14 +56,14 @@ limitations under the License.
         android:title="@string/graphics_title">
         <PreferenceScreen
             android:key="kcal"
-            android:fragment="com.syberia.settings.device.DisplayCalibration"
+            android:fragment="com.cyanogenmod.settings.device.DisplayCalibration"
             android:summary="@string/kcal_summary"
             android:title="@string/kcal_title" />
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/vibrator_category">
-        <com.syberia.settings.device.preference.VibratorStrengthPreference
+        <com.cyanogenmod.settings.device.preference.VibratorStrengthPreference
             android:key="vibrator_key"
             android:title="@string/vibrator_title"
             android:summary="@string/vibrator_summary" />

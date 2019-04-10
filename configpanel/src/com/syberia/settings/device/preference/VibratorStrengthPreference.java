@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.syberia.settings.device.preference;
+package com.cyanogenmod.settings.device.preference;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -39,8 +39,8 @@ import android.util.Log;
 
 import java.util.List;
 
-import com.syberia.settings.device.utils.Utils;
-import com.syberia.settings.device.R;
+import com.cyanogenmod.settings.device.utils.Utils;
+import com.cyanogenmod.settings.device.R;
 
 public class VibratorStrengthPreference extends DialogPreference implements SeekBar.OnSeekBarChangeListener, DialogInterface.OnDismissListener {
 
