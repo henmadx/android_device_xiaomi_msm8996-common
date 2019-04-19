@@ -514,35 +514,36 @@ framework/org.simalliance.openmobileapi.jar
 # msm_irqbalance - from sailfish - PPR2.181005.003
 vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13
 
-# Perf from - from daisy - PKQ1.180917.001
+# Perf - from op3 - PKQ1.181203.001
 lib/vendor.qti.hardware.iop@1.0.so|01bded5f912ff47f6bddcdf362af3b8b06090de1
 lib/vendor.qti.hardware.iop@2.0.so|f7c21407cec3cebdbcd49e6dd0932893e25e2eb4
 lib/vendor.qti.hardware.perf@1.0.so|39a81e7cc35f542e5e2eeed6f38152b44063928f
 lib64/vendor.qti.hardware.iop@1.0.so|3fb2a359a1f9ef6544538aa9d70391f4e5da3972
 lib64/vendor.qti.hardware.iop@2.0.so|efc50e3f5649ee2e921a4f21c8227a43bb4ca0dd
 lib64/vendor.qti.hardware.perf@1.0.so|978a16bc6f27967f6345c5b51386d50768553ab5
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|3f4cf13499019e7e3747679220b280f4f204b8de
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|7a38f7ef085ddb1a5cd8731e9d2fc1540c3e85ad
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so|301dc3b1020b4dc05c81ee831f7c55a0cb848128
-vendor/lib/libperfgluelayer.so|0cda8dd77f3c00b70ad50b7764adfb7869d3537e
+vendor/lib/libperfgluelayer.so|3850d4ea3dbead227b622fcc47fcec29955fcc63
 vendor/lib/libqti-iopd-client.so|5935fb7726ce8a50374fbd9602cdf84357c29de1
 vendor/lib/libqti-iopd.so|70443f1e046b72255242232a16b963fc3c0ca981
-vendor/lib/libqti-perfd.so|2c8af66cbcb941b9da2edb68f428776cbbabdff6
-vendor/lib/libqti-util.so|459a7375feb57c2e11d012c5fb65befd94e91d06
+vendor/lib/libqti-perfd.so|2a2077cf455d5a6b03c0bb2b6eeca554ee28a363
+vendor/lib/libqti-util.so|d65f3ef240cebea73bd1ba8b1132a7e639aa05bb
 vendor/lib/vendor.qti.hardware.iop@1.0.so|01bded5f912ff47f6bddcdf362af3b8b06090de1
 vendor/lib/vendor.qti.hardware.iop@2.0.so|f7c21407cec3cebdbcd49e6dd0932893e25e2eb4
-vendor/lib/vendor.qti.hardware.perf@1.0.so|39a81e7cc35f542e5e2eeed6f38152b44063928f
+vendor/lib/vendor.qti.hardware.perf@1.0.so|84e437b0dea2d8c1d5712a9fadf132ae5d665d46
 vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so|7ad1b07053380495e749e16a23eaeb2219c1c6a5
-vendor/lib64/libperfgluelayer.so|e8bc850cbb8d2c2b9ed8c6b9c48eb4b1fd197622
+vendor/lib64/libperfgluelayer.so|627a324616de86ba90889a7c8dd7a05c46a30aaa
 vendor/lib64/libqti-iopd-client.so|6510e37e52fe2f5f1da892d4be4a7c91eb9f1525
 vendor/lib64/libqti-iopd.so|5fecce932d982459a162653c3e928e7f98bd66d1
-vendor/lib64/libqti-perfd.so|96806732f4e5f8c25ba2e12a3a939fc2889c7341
-vendor/lib64/libqti-util.so|30dc90c1636fd100a8e101dfa659e0b7299ff813
+vendor/lib64/libqti-perfd.so|68c995a76cad4c8b0af1c4743a5157b70dad1dd1
+vendor/lib64/libqti-util.so|0c34c7cbb07197841e9f097925fe961f3226e621
 vendor/lib64/vendor.qti.hardware.iop@1.0.so|3fb2a359a1f9ef6544538aa9d70391f4e5da3972
 vendor/lib64/vendor.qti.hardware.iop@2.0.so|efc50e3f5649ee2e921a4f21c8227a43bb4ca0dd
-vendor/lib64/vendor.qti.hardware.perf@1.0.so|978a16bc6f27967f6345c5b51386d50768553ab5
+vendor/lib64/vendor.qti.hardware.perf@1.0.so|f3d180595bdfeac68d13e13ecf704f892e7a52a5
 vendor/lib/libqti-perfd-client.so|a4a6da47ee26fcd5116c514f7fed15b91306aea3
-vendor/lib64/libqti-perfd-client.so|d9fb126fb7aff2db61978f46f78e0284e95183be
+vendor/lib64/libqti-perfd-client.so|1e84aa49a8cff0f69f0261c69dd8843534efd79e
+vendor/bin/energy-awareness|3f1aa4d518ff361aa3ed9e41ace3e16d36cf0bbe
 
 # Perfconfigs
 vendor/etc/perf/perfboostsconfig.xml|d5f3717c0d949ad1920701b38715fbca2bb7f23c
@@ -707,11 +708,11 @@ vendor/lib/sensor_calibrate.so|39ca3c985d67c296ef21e8ce0822f7fc26023dcd
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|826e3a2983f208d083ec210ab1817e6f50476c01
 vendor/lib64/sensor_calibrate.so|8d23318acf49b044512af1501407206a727bd978
 
-# Thermal - from op3 - OPR1.170623.032
-vendor/bin/thermal-engine|ab1d429f5b859c9f10b91db25de9b5f5b7ce5a49
--vendor/lib64/libthermalclient.so|7f2a2b0bc3614cf6411ea11c85ac1b6a8392738f
-vendor/lib64/libthermalioctl.so|4d11093bc25909edc8df3e1164f5fb990c9e8975
--vendor/lib/libthermalclient.so|e14cd4d090e52394cb5a39912e71b50091873bcb
+# Thermal - from op3 - PKQ1.181203.001
+vendor/bin/thermal-engine|b15c9e8fa54ebb15dfeb36c7fbc834a28b4c836e
+-vendor/lib64/libthermalclient.so|94424d7c8f8daff8bbfd7454fe4d5f1fbf411260
+vendor/lib64/libthermalioctl.so|aa2a0abd8fb9792024efd93f648c129b6a22619e
+-vendor/lib/libthermalclient.so|270ea373c617584af092dc4ea2aa1c7bf27be7f4
 
 # Time services - from daisy - PKQ1.180917.001
 -vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
