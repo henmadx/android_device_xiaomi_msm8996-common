@@ -48,8 +48,13 @@
             android:title="@string/fingerprint_pocketmode_title"
             android:summary="@string/fingerprint_pocketmode_summary"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:dependency="fp_wakeup" />
 >>>>>>> 0f0d7fac... New device settings
+=======
+            android:dependency="fp_wakeup" /-->
+
+>>>>>>> c2a05964... configpanel works
 =======
             android:dependency="fp_wakeup" /-->
 
