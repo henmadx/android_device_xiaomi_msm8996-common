@@ -32,7 +32,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 
 import android.app.ActionBar;
-import com.cyanogenmod.settings.device.utils.Utils;
 import com.cyanogenmod.settings.device.utils.SeekBarPreference;
 import com.cyanogenmod.settings.device.R;
 
