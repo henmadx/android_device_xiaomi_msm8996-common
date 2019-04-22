@@ -43,12 +43,17 @@
 <<<<<<< HEAD
 =======
 
-        <SwitchPreference
+        <!--SwitchPreference
             android:key="fp_pocketmode"
             android:title="@string/fingerprint_pocketmode_title"
             android:summary="@string/fingerprint_pocketmode_summary"
+<<<<<<< HEAD
             android:dependency="fp_wakeup" />
 >>>>>>> 0f0d7fac... New device settings
+=======
+            android:dependency="fp_wakeup" /-->
+
+>>>>>>> c2a05964... configpanel works
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -63,23 +68,36 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-            android:title="@string/graphics_title">
-
-        <PreferenceScreen
-                android:summary="@string/kcal_summary"
-                android:title="@string/kcal_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/vibrator_category">
         <com.cyanogenmod.settings.device.VibratorStrengthPreference
-            android:key="vibrator_key"
+           android:key="vibrator_key"
             android:iconSpaceReserved="false"
             android:title="@string/vibrator_title"
             android:summary="@string/vibrator_summary" />
     </PreferenceCategory>
 
+    <PreferenceCategory
 
+            android:title="@string/graphics_title">
+
+    <PreferenceScreen
+            android:key="kcal"
+            android:fragment="com.cyanogenmod.settings.device.DisplayCalibration"
+            android:summary="@string/kcal_summary"
+            android:title="@string/kcal_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/qc3_category">
+
+    <ListPreference
+        android:key="hvdcp3"
+        android:title="@string/qc3_title"
+        android:entries="@array/qc3_entries"
+        android:entryValues="@array/qc3_values"
+        android:summary="%s" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

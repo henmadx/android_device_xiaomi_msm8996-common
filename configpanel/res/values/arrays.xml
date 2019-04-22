@@ -16,4 +16,32 @@
 -->
 <resources>
 
+    <string-array name="qc3_entries" translatable="false">
+        <item>@string/qc3_2000</item>
+        <item>@string/qc3_2100</item>
+        <item>@string/qc3_2200</item>
+        <item>@string/qc3_2300</item>
+        <item>@string/qc3_2400</item>
+        <item>@string/qc3_2500</item>
+        <item>@string/qc3_2600</item>
+        <item>@string/qc3_2700</item>
+        <item>@string/qc3_2800</item>
+        <item>@string/qc3_2900</item>
+        <item>@string/qc3_3000</item>
+
+    </string-array>
+
+    <string-array name="qc3_values" translatable="false">
+        <item>2000</item>
+        <item>2100</item>
+        <item>2200</item>
+        <item>2300</item>
+        <item>2400</item>
+        <item>2500</item>
+        <item>2600</item>
+        <item>2700</item>
+        <item>2800</item>
+        <item>2900</item>
+        <item>3000</item>
+    </string-array>
 </resources>

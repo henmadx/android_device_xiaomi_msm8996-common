@@ -1,0 +1,13 @@
+
+
+
+#============= untrusted_app_25 ==============
+allow untrusted_app_25 proc_modules:file getattr;
+allow untrusted_app_25 self:udp_socket ioctl;
+allow untrusted_app_25 serialno_prop:file read;
+
+#============= untrusted_app_27 ==============
+allow untrusted_app_27 storage_file:dir setattr;
+
+#============= webview_zygote ==============
+allow webview_zygote theme_data_file:dir search;
