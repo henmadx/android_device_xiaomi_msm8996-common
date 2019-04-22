@@ -37,7 +37,6 @@ import android.app.AlertDialog;
 
 import java.util.List;
 
-
 public class VibratorStrengthPreference extends DialogPreference implements
         SeekBar.OnSeekBarChangeListener {
 

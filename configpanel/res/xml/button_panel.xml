@@ -41,11 +41,12 @@
             android:title="@string/fp_wakeup_title"
             android:summary="@string/fp_wakeup_summary" />
 
-        <SwitchPreference
+        <!--SwitchPreference
             android:key="fp_pocketmode"
             android:title="@string/fingerprint_pocketmode_title"
             android:summary="@string/fingerprint_pocketmode_summary"
-            android:dependency="fp_wakeup" />
+            android:dependency="fp_wakeup" /-->
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -60,23 +61,36 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-            android:title="@string/graphics_title">
-
-        <PreferenceScreen
-                android:summary="@string/kcal_summary"
-                android:title="@string/kcal_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/vibrator_category">
         <com.cyanogenmod.settings.device.VibratorStrengthPreference
-            android:key="vibrator_key"
+           android:key="vibrator_key"
             android:iconSpaceReserved="false"
             android:title="@string/vibrator_title"
             android:summary="@string/vibrator_summary" />
     </PreferenceCategory>
 
+    <PreferenceCategory
 
+            android:title="@string/graphics_title">
+
+    <PreferenceScreen
+            android:key="kcal"
+            android:fragment="com.cyanogenmod.settings.device.DisplayCalibration"
+            android:summary="@string/kcal_summary"
+            android:title="@string/kcal_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/qc3_category">
+
+    <ListPreference
+        android:key="hvdcp3"
+        android:title="@string/qc3_title"
+        android:entries="@array/qc3_entries"
+        android:entryValues="@array/qc3_values"
+        android:summary="%s" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
