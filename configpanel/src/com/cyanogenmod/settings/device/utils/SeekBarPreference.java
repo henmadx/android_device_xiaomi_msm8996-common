@@ -17,115 +17,49 @@
  */
 package com.cyanogenmod.settings.device.utils;
 
+import com.cyanogenmod.settings.device.R;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.preference.Preference;
-import android.text.InputFilter;
-import android.text.InputType;
 import android.util.AttributeSet;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
+import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import android.os.Handler;
-import android.os.Message;
+public class SeekBarPreference extends Preference implements
+        OnSeekBarChangeListener {
 
-import com.cyanogenmod.settings.device.R;
-import com.cyanogenmod.settings.device.Utils;
+    public static int maximum = 256;
+    public static int interval = 1;
 
-public class SeekBarPreference extends Preference {
+    private TextView monitorBox;
+    private SeekBar bar;
 
-    public int minimum = 1;
-    public int maximum = 256;
-    public int def = 256;
-    public int interval = 1;
-
-    final int UPDATE = 0;
-
-    int currentValue = def;
+    int currentValue = 256;
 
     private OnPreferenceChangeListener changer;
 
     public SeekBarPreference(Context context, AttributeSet attrs) {
-        super(context, attrs, 0);
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SeekBarPreference, 0, 0);
-        
-        minimum = typedArray.getInt(R.styleable.SeekBarPreference_min_value, minimum);
-        maximum = typedArray.getInt(R.styleable.SeekBarPreference_max_value, maximum);
-        def = typedArray.getInt(R.styleable.SeekBarPreference_default_value, def);
-
-        typedArray.recycle();
+        super(context, attrs);
     }
 
     @Override
-    public void setEnabled(boolean enabled) {
-        super.setEnabled(enabled);
-    }
+    protected View onCreateView(ViewGroup parent) {
 
-    private void bind(final View layout) {
-        final EditText monitorBox = (EditText) layout.findViewById(R.id.monitor_box);
-        final SeekBar bar = (SeekBar) layout.findViewById(R.id.seek_bar);
+        View layout = View.inflate(getContext(), R.layout.slider_preference,
+                null);
 
-        monitorBox.setInputType(InputType.TYPE_CLASS_NUMBER);
-
-        bar.setMax(maximum - minimum);
-        bar.setProgress(currentValue - minimum);        
-
+        monitorBox = (TextView) layout.findViewById(R.id.monitor_box);
+        bar = (SeekBar) layout.findViewById(R.id.seek_bar);
+        bar.setProgress(currentValue);
+        bar.setMax(maximum);
         monitorBox.setText(String.valueOf(currentValue));
-        monitorBox.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                    monitorBox.setSelection(monitorBox.getText().length());
-            }
-        });
+        bar.setOnSeekBarChangeListener(this);
 
-        monitorBox.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int keyCode, KeyEvent event) {
-                if (keyCode == EditorInfo.IME_ACTION_DONE) {
-                    v.clearFocus();
-                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                    currentValue = (int) Utils.clamp(Integer.parseInt(v.getText().toString()),minimum,maximum);
-                    monitorBox.setText(String.valueOf(currentValue));
-                    bar.setProgress(currentValue - minimum, true);
-                    changer.onPreferenceChange(SeekBarPreference.this, Integer.toString(currentValue));
-                    return true;
-                }
-                return false;
-            }
-        });
-
-        bar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progress = Math.round(((float) progress) / interval) * interval;
-                currentValue = progress + minimum;
-                monitorBox.setText(String.valueOf(currentValue));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                changer.onPreferenceChange(SeekBarPreference.this, Integer.toString(currentValue));
-            }
-        });
-    }
-
-    @Override
-    protected void onBindView(View view) {
-        super.onBindView(view);
-        bind(view);
+        return layout;
     }
 
     public void setInitValue(int progress) {
@@ -133,19 +67,34 @@ public class SeekBarPreference extends Preference {
     }
 
     @Override
-    public void setOnPreferenceChangeListener(OnPreferenceChangeListener onPreferenceChangeListener) {
+    protected Object onGetDefaultValue(TypedArray a, int index) {
+        // TODO Auto-generated method stub
+        return super.onGetDefaultValue(a, index);
+    }
+
+    @Override
+    public void setOnPreferenceChangeListener(
+            OnPreferenceChangeListener onPreferenceChangeListener) {
         changer = onPreferenceChangeListener;
         super.setOnPreferenceChangeListener(onPreferenceChangeListener);
     }
 
-    public int reset() {
-        currentValue = (int) Utils.clamp(def, minimum, maximum);
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress,
+            boolean fromUser) {
+        progress = Math.round(((float) progress) / interval) * interval;
+        currentValue = progress;
+        monitorBox.setText(String.valueOf(progress));
         notifyChanged();
-        return currentValue;
     }
 
-    public void setValue(int progress) {
-        currentValue = (int) Utils.clamp(progress, minimum, maximum);
-        notifyChanged();
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        changer.onPreferenceChange(this, Integer.toString(currentValue));
     }
 }
+

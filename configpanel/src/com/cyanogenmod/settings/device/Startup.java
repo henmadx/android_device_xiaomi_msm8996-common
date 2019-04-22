@@ -27,6 +27,7 @@ import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
 import java.io.File;
+
 import com.cyanogenmod.settings.device.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
@@ -69,12 +70,12 @@ public class Startup extends BroadcastReceiver {
                 }
 
                 // Send initial broadcasts
-                final boolean shouldEnablePocketMode =
-                        prefs.getBoolean(Constants.FP_WAKEUP_KEY, false) &&
-                        prefs.getBoolean(Constants.FP_POCKETMODE_KEY, false);
-                Utils.broadcastCustIntent(context, shouldEnablePocketMode);
+//                final boolean shouldEnablePocketMode =
+//                        prefs.getBoolean(Constants.FP_WAKEUP_KEY, false) &&
+//                        prefs.getBoolean(Constants.FP_POCKETMODE_KEY, false);
+//                Utils.broadcastCustIntent(context, shouldEnablePocketMode);
+                        prefs.getBoolean(Constants.FP_WAKEUP_KEY, false);
             }
-
         }
     }
 

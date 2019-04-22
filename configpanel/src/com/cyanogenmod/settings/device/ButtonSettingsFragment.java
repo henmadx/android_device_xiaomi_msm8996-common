@@ -48,20 +48,20 @@ public class ButtonSettingsFragment extends PreferenceFragment
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mKcalPref = findPreference("kcal");
-                mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                     @Override
-                     public boolean onPreferenceClick(Preference preference) {
-                         Intent intent = new Intent(getActivity(), DisplayCalibration.class);
-                         startActivity(intent);
-                         return true;
-                     }
-                });
-
         mVibratorStrength = (VibratorStrengthPreference) findPreference("vibrator_key");
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
+
+        mKcalPref = findPreference("kcal");
+        mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+             @Override
+             public boolean onPreferenceClick(Preference preference) {
+                 Intent intent = new Intent(getActivity(), DisplayCalibration.class);
+                 startActivity(intent);
+                 return true;
+             }
+        });
     }
 
     @Override
@@ -79,7 +79,7 @@ public class ButtonSettingsFragment extends PreferenceFragment
             Boolean value = (Boolean) newValue;
             FileUtils.writeLine(node, value ? "1" : "0");
             if (Constants.FP_WAKEUP_KEY.equals(preference.getKey())) {
-                value &= prefs.getBoolean(Constants.FP_POCKETMODE_KEY, false);
+
                 Utils.broadcastCustIntent(getContext(), value);
             }
             return true;
@@ -90,10 +90,6 @@ public class ButtonSettingsFragment extends PreferenceFragment
             return true;
         }
 
-        if (Constants.FP_POCKETMODE_KEY.equals(preference.getKey())) {
-            Utils.broadcastCustIntent(getContext(), (Boolean) newValue);
-            return true;
-        }
 
         return false;
     }
@@ -126,14 +122,11 @@ public class ButtonSettingsFragment extends PreferenceFragment
             }
         }
 
-        // Initialize other preferences whose keys are not associated with nodes
-        SwitchPreference b = (SwitchPreference) findPreference(Constants.FP_POCKETMODE_KEY);
-        b.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
+       if (item.getItemId() == android.R.id.home) {
             getActivity().onBackPressed();
             return true;
         }
@@ -157,7 +150,7 @@ public class ButtonSettingsFragment extends PreferenceFragment
     @Override
     public void onDisplayPreferenceDialog(Preference preference) {
         if (preference instanceof VibratorStrengthPreference){
-            ((VibratorStrengthPreference)preference).onDisplayPreferenceDialog(preference);
+           ((VibratorStrengthPreference)preference).onDisplayPreferenceDialog(preference);
         } else {
             super.onDisplayPreferenceDialog(preference);
         }
