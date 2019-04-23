@@ -27,8 +27,6 @@ import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
 import java.io.File;
-import com.cyanogenmod.settings.device.preference.VibratorStrengthPreference;
-import com.cyanogenmod.settings.device.utils.Utils;
 import com.cyanogenmod.settings.device.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
