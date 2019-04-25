@@ -1,6 +1,6 @@
 cc_binary {
-    name: "android.hardware.health@2.0-service.gemini",
-    init_rc: ["android.hardware.health@2.0-service.gemini.rc"],
+    name: "android.hardware.health@2.0-service.capricorn",
+    init_rc: ["android.hardware.health@2.0-service.capricorn.rc"],
     proprietary: true,
     relative_install_path: "hw",
     srcs: [

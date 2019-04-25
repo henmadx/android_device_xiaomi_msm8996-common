@@ -312,7 +312,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_PACKAGES += \
-    librecovery_updater_gemini
+    librecovery_updater_capricorn
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -395,7 +395,7 @@ PRODUCT_PACKAGES += \
     init.tfa.sh \
     tinyplay
 
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware.power=gemini
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.power=capricorn
 
 #Vendor's public libraries
 PRODUCT_COPY_FILES += \

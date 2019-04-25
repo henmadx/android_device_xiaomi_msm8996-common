@@ -218,7 +218,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_gemini
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_capricorn
 TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
 
 # Render
@@ -237,8 +237,8 @@ include device/qcom/sepolicy/sepolicy.mk
 TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_gemini
-TARGET_RECOVERY_DEVICE_MODULES := libinit_gemini
+TARGET_INIT_VENDOR_LIB := libinit_capricorn
+TARGET_RECOVERY_DEVICE_MODULES := libinit_capricorn
 
 # WebView Beta
 PREBUILT_WEBVIEW_VERSION := chromium
