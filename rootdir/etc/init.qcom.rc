@@ -373,6 +373,9 @@ on boot
     # Access permission for vibration intensity level
     chown system system /sys/class/timed_output/vibrator/vtg_level
     chmod 0660 /sys/class/timed_output/vibrator/vtg_level
+   
+   # Start RIL daemon
+    start ril-daemon
 
     # Access permission for fingerprint
     chown system system /sys/devices/soc/soc:fpc_fpc1020/irq
