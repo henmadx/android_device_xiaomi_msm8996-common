@@ -34,10 +34,7 @@ import android.view.MenuItem;
 
 import java.io.File;
 
-import com.cyanogenmod.settings.device.R;
-import com.cyanogenmod.settings.device.preference.VibratorStrengthPreference;
 import com.cyanogenmod.settings.device.utils.FileUtils;
-import com.cyanogenmod.settings.device.utils.Utils;
 
 public class ButtonSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {

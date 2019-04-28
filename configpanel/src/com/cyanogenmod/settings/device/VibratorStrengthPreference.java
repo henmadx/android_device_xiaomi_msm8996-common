@@ -37,9 +37,6 @@ import android.app.AlertDialog;
 
 import java.util.List;
 
-import com.cyanogenmod.settings.device.utils.Utils;
-import com.cyanogenmod.settings.device.R;
-
 public class VibratorStrengthPreference extends DialogPreference implements
         SeekBar.OnSeekBarChangeListener {
 
