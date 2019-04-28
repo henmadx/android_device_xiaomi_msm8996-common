@@ -441,4 +441,12 @@
 
     <!-- Whether to show VoLTE icon in the status bar -->
     <bool name="config_display_volte">true</bool>
+
+    <!-- Whether device ignores the RSSNR signal implementation -->
+    <bool name="config_ignoreRssnrSignalLevel">true</bool>
+
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+    <item>com.cyanogenmod.settings.device.KeyHandler</item>
+    </string-array> 
+
 </resources>
