@@ -121,6 +121,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bservice_enable=true
 
+# UI
+PRODUCT_PROPERTY_OVERRIDES += \
+sys.use_fifo_ui=1
+
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port=I2C \
