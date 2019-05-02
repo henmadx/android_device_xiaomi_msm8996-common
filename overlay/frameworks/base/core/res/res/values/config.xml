@@ -461,7 +461,7 @@
         <item>GPS_LOCK=0</item>
     </string-array>
 
-    <!-- True if the device supports Sustained Performance Mode-->
-    <bool name="config_sustainedPerformanceModeSupported">true</bool>
+    <!-- True if the device supports Sustained Performance Mode
+    <bool name="config_sustainedPerformanceModeSupported">true</bool> -->
 
 </resources>
