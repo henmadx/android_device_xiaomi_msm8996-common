@@ -19,7 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
-  ro.af.client_heap_size_kbyte=7168 \
+    ro.af.client_heap_size_kbyte=7168 \
     audio.deep_buffer.media=true \
     audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
@@ -28,7 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.bt.enable.splita2dp=false \
-  persist.vendor.audio.hw.binder.size_kbyte=1024 \
+    persist.vendor.audio.hw.binder.size_kbyte=1024 \
     ro.af.client_heap_size_kbyte=7168 \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7 \
@@ -56,7 +56,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
     qcom.bluetooth.soc=rome \
-  vendor.qcom.bluetooth.soc=rome \
+    vendor.qcom.bluetooth.soc=rome \
     ro.bluetooth.dun=true \
     ro.bluetooth.hfp.ver=1.7 \
     ro.bluetooth.sap=true \
@@ -77,6 +77,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.dpm.enable=true  \
     persist.vendor.cne.feature=1 \
     persist.vendor.dpm.feature=5 \
+    persist.vendor.dpm.nsrm.bkg.evt=3955 \
     persist.env.fastdorm.enabled=true
 
 # Data modules
