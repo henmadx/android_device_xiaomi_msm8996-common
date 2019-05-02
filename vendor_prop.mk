@@ -76,8 +76,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.dpm.enable=true  \
     persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=5 \
-    persist.vendor.dpm.nsrm.bkg.evt=3955 \
+    persist.vendor.dpm.feature=1 \
     persist.env.fastdorm.enabled=true
 
 # Data modules
