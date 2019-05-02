@@ -76,15 +76,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.dpm.enable=true  \
     persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=11 \
+    persist.vendor.dpm.feature=1 \
     persist.env.fastdorm.enabled=true
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
     persist.data.mode=concurrent \
+    persist.vendor.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
     ro.use_data_netmgrd=true \
+    ro.vendor.use_data_netmgrd=true \
     persist.data.dpm.enable=true
 
 # Display (Qualcomm AD)
@@ -172,17 +174,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.net.doxlat=true \
     persist.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.add_power_save=true \
     persist.radio.add_power_save=true \
     persist.radio.force_on_dc=true \
-    persist.vendor.radio.force_on_dc=true \
     persist.radio.multisim.config=dsds \
     persist.radio.redir_party_num=1 \
+    persist.vendor.radio.force_on_dc=true \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.add_power_save=true \
     persist.vendor.radio.multisim.config=dsds \
     persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.ignore_dom_time=10 \
     persist.vendor.radio.sib16_support=1
 
 # RmNet Data
