@@ -187,6 +187,7 @@ on property:sys.boot_completed=1
     # Set I/O squeduler
     setprop sys.io.scheduler "cfq"
     setprop vendor.powerhal.init 1
+    write /proc/irq/default_smp_affinity 3
 
     # Start I/O prefetcher service
     #start iop
