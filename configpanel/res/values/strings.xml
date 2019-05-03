@@ -44,7 +44,7 @@
     <string name="fp_wakeup_title">Fingerprint wakes device</string>
     <string name="fp_wakeup_summary">Allow fingerprint to wake the device while screen is off</string>
 
-<!--    <string name="fingerprint_pocketmode_title">Prevent accidental wake-up</string>
+    <string name="fingerprint_pocketmode_title">Prevent accidental wake-up</string>
     <string name="fingerprint_pocketmode_summary">Check the proximity sensor prior to wake-ups triggered by the fingerprint sensor</string>
 
     < Kcal -->
@@ -58,6 +58,7 @@
     <string name="kcal_saturation">Saturation</string>
     <string name="kcal_contrast">Constrast</string>
 
+<<<<<<< HEAD
     <!-- Vibrator -->
     <string name="vibrator_category">Vibrator</string>
     <string name="vibrator_title">Strength</string>
@@ -70,6 +71,8 @@
 =======
 >>>>>>> c2a05964... configpanel works
 
+=======
+>>>>>>> e43d45f0... test
     <!-- QC3.0 Charge limit -->
     <string name="qc3_category">Charging limit</string>
     <string name="qc3_title">QC3.0 charging limit</string>
