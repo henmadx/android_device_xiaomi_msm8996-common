@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package org.omnirom.device;
+package com.cyanogenmod.settings.device;
 
 import android.content.ContentResolver;
 import android.content.Context;
