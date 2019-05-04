@@ -5,15 +5,12 @@ allow system_app proc_touchpanel:dir search;
 allow system_app proc_touchpanel:file rw_file_perms;
 allow system_app sysfs_fpc_keyevents:file rw_file_perms;
 allow system_app sysfs_fpc_wakeup:file rw_file_perms;
-<<<<<<< HEAD
-=======
 allow system_app sysfs_qc:file rw_file_perms;
 allow system_app sysfs_qc:dir search;
 allow system_app kcal_dev:file rw_file_perms;
 allow system_app kcal_dev:dir search;
 allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_vibrator:dir search;
->>>>>>> bbaad9d8... msm8996-common: DeviceFeatures: Add vibration value
 
 # Allow PocketMode to work
 allow system_app sysfs_fpc_proximity:file rw_file_perms;
@@ -27,8 +24,3 @@ allow system_app qfp-daemon_core_data_file:dir create_dir_perms;
 allow system_app qfp-daemon_core_data_file:file create_file_perms;
 
 allow system_app qfp_proxy_service:service_manager add;
-
-allow system_app kcal_dev:file rw_file_perms;
-allow system_app kcal_dev:dir search;
-allow system_app sysfs_vibrator:file rw_file_perms;
-allow system_app sysfs_vibrator:dir search;
