@@ -1,4 +1,5 @@
 #============= untrusted_app_25 ==============
+allow untrusted_app_25 serialno_prop:file read;
 dontaudit untrusted_app_25 anr_data_file:dir read;
 allow untrusted_app_25 sysfs_qc:dir { getattr open read };
 allow untrusted_app_25 sysfs_qc:file { getattr open read };
