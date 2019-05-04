@@ -1,6 +1,7 @@
 allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
 allow init debugfs:file write;
+allow init sysfs_qc:dir { open read write };
+allow init kcal_dev:dir { open read write };
 allow init untrusted_app:fd { use };
 allow init hidl_memory_hwservice:hwservice_manager { find };
-allow init untrusted_app_27:fd { use };
 allow init untrusted_app_25:fd { use };
