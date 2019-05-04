@@ -40,11 +40,7 @@ public final class FileUtils {
      * @return the read line contents, or null on failure
      */
     public static String readOneLine(String fileName) {
-<<<<<<< HEAD
-        String line = null;
-=======
         String line =  "";
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
         BufferedReader reader = null;
 
         try {

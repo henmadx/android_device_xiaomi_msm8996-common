@@ -1,10 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
-<<<<<<< HEAD
- *           (C) 2017-2018 The LineageOS Project
-=======
  *           (C) 2017 The LineageOS Project
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,36 +20,11 @@ package com.cyanogenmod.settings.device;
 import java.util.HashMap;
 import java.util.Map;
 
-<<<<<<< HEAD
-import com.cyanogenmod.settings.device.utils.FileUtils;
-
-=======
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
 public class Constants {
 
     // Preference keys
     public static final String BUTTON_SWAP_KEY = "button_swap";
     public static final String FP_HOME_KEY = "fp_home";
-<<<<<<< HEAD
-//    public static final String FP_POCKETMODE_KEY = "fp_pocketmode";
-    public static final String FP_WAKEUP_KEY = "fp_wakeup";
-    public static final String DT2W_KEY = "dt2w";
-    public static final String CHARGE_LIMIT_KEY = "hvdcp3";
-
-
-    // Nodes
-    public static final String CYTTSP_BUTTON_SWAP_NODE = "/proc/buttons/reversed_keys_enable";
-    public static final String FP_HOME_KEY_NODE = "/sys/devices/soc/soc:fpc_fpc1020/enable_key_events";
-    public static final String FP_WAKEUP_NODE = "/sys/devices/soc/soc:fpc_fpc1020/enable_wakeup";
-    public static final String TOUCHPANEL_BUTTON_SWAP_NODE = "/proc/touchpanel/reversed_keys_enable";
-    public static final String VIRTUAL_KEYS_NODE = "/proc/touchpanel/capacitive_keys_enable";
-    public static final String DT2W_NODE = "/proc/touchpanel/double_tap_enable";
-    public static final String CHARGE_LIMIT_NODE = "/sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma";
-
-    // Intents
-    public static final String CUST_INTENT = "com.cyanogenmod.settings.device.CUST_UPDATE";
-//    public static final String CUST_INTENT_EXTRA = "pocketmode_service";
-=======
     public static final String FP_WAKEUP_KEY = "fp_wakeup";
     public static final String DT2W_KEY = "dt2w";
 
@@ -67,7 +38,6 @@ public class Constants {
     // Intents
     public static final String CUST_INTENT = "com.cyanogenmod.settings.device.CUST_UPDATE";
     public static final String CUST_INTENT_EXTRA = "pocketmode_service";
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
 
     // Holds <preference_key> -> <proc_node> mapping
     public static final Map<String, String> sBooleanNodePreferenceMap = new HashMap<>();
@@ -86,28 +56,6 @@ public class Constants {
         BUTTON_SWAP_KEY,
         FP_HOME_KEY,
         FP_WAKEUP_KEY,
-<<<<<<< HEAD
-	DT2W_KEY,
-	CHARGE_LIMIT_KEY
-    };
-
-    static {
-        if (FileUtils.fileExists(Constants.CYTTSP_BUTTON_SWAP_NODE)) {
-            sBooleanNodePreferenceMap.put(BUTTON_SWAP_KEY, CYTTSP_BUTTON_SWAP_NODE);
-        } else if (FileUtils.fileExists(Constants.TOUCHPANEL_BUTTON_SWAP_NODE)) {
-            sBooleanNodePreferenceMap.put(BUTTON_SWAP_KEY, TOUCHPANEL_BUTTON_SWAP_NODE);
-        }
-        sBooleanNodePreferenceMap.put(FP_HOME_KEY, FP_HOME_KEY_NODE);
-        sBooleanNodePreferenceMap.put(FP_WAKEUP_KEY, FP_WAKEUP_NODE);
-        sBooleanNodePreferenceMap.put(DT2W_KEY, DT2W_NODE);
-	sStringNodePreferenceMap.put(CHARGE_LIMIT_KEY, CHARGE_LIMIT_NODE);
-
-        sNodeDefaultMap.put(BUTTON_SWAP_KEY, true);
-        sNodeDefaultMap.put(DT2W_KEY, false);
-        sNodeDefaultMap.put(FP_HOME_KEY, true);
-        sNodeDefaultMap.put(FP_WAKEUP_KEY, true);
-        sNodeDefaultMap.put(CHARGE_LIMIT_KEY, "2700");
-=======
 	DT2W_KEY
     };
 
@@ -121,7 +69,6 @@ public class Constants {
         sNodeDefaultMap.put(DT2W_KEY, false);
         sNodeDefaultMap.put(FP_HOME_KEY, false);
         sNodeDefaultMap.put(FP_WAKEUP_KEY, true);
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
 
         sNodeDependencyMap.put(FP_HOME_KEY, new String[]{ VIRTUAL_KEYS_NODE, "1" });
     }

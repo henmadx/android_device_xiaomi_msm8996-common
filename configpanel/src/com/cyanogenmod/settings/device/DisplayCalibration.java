@@ -28,11 +28,6 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.os.Bundle;
-<<<<<<< HEAD
-
-import android.app.ActionBar;
-import com.cyanogenmod.settings.device.utils.SeekBarPreference;
-=======
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.util.Log;
@@ -41,7 +36,6 @@ import android.app.ActionBar;
 import com.cyanogenmod.settings.device.preference.SeekBarPreference;
 import com.cyanogenmod.settings.device.utils.Utils;
 import com.cyanogenmod.settings.device.R;
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
 
 public class DisplayCalibration extends PreferenceActivity implements
         OnPreferenceChangeListener {
@@ -52,20 +46,14 @@ public class DisplayCalibration extends PreferenceActivity implements
     public static final String KEY_KCAL_BLUE = "kcal_blue";
     public static final String KEY_KCAL_SATURATION = "kcal_saturation";
     public static final String KEY_KCAL_CONTRAST = "kcal_contrast";
-<<<<<<< HEAD
-=======
     public static final String KEY_KCAL_COLOR_TEMP = "kcal_color_temp";
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
 
     private SeekBarPreference mKcalRed;
     private SeekBarPreference mKcalBlue;
     private SeekBarPreference mKcalGreen;
     private SeekBarPreference mKcalSaturation;
     private SeekBarPreference mKcalContrast;
-<<<<<<< HEAD
-=======
     private SeekBarPreference mKcalColorTemp;
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
     private SharedPreferences mPrefs;
     private SwitchPreference mKcalEnabled;
     private boolean mEnabled;
@@ -79,11 +67,8 @@ public class DisplayCalibration extends PreferenceActivity implements
     private static final String COLOR_FILE_SATURATION = "/sys/devices/platform/kcal_ctrl.0/kcal_sat";
     private static final String COLOR_FILE_ENABLE = "/sys/devices/platform/kcal_ctrl.0/kcal_enable";
 
-<<<<<<< HEAD
-=======
     private static Utils.KKalParams mDefaultParams = Utils.getDefaultParams();
 
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,40 +82,13 @@ public class DisplayCalibration extends PreferenceActivity implements
 
         addPreferencesFromResource(R.xml.display_calibration);
 
-<<<<<<< HEAD
-=======
         mDefaultParams = Utils.getParams();
 
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
         mKcalEnabled = (SwitchPreference) findPreference(KEY_KCAL_ENABLED);
         mKcalEnabled.setChecked(mPrefs.getBoolean(DisplayCalibration.KEY_KCAL_ENABLED, false));
         mKcalEnabled.setOnPreferenceChangeListener(this);
 
         mKcalRed = (SeekBarPreference) findPreference(KEY_KCAL_RED);
-<<<<<<< HEAD
-        mKcalRed.setInitValue(mPrefs.getInt(KEY_KCAL_RED, 256));
-        mKcalRed.setOnPreferenceChangeListener(this);
-
-        mKcalGreen = (SeekBarPreference) findPreference(KEY_KCAL_GREEN);
-        mKcalGreen.setInitValue(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-        mKcalGreen.setOnPreferenceChangeListener(this);
-
-        mKcalBlue = (SeekBarPreference) findPreference(KEY_KCAL_BLUE);
-        mKcalBlue.setInitValue(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-        mKcalBlue.setOnPreferenceChangeListener(this);
-
-        mKcalSaturation = (SeekBarPreference) findPreference(KEY_KCAL_SATURATION);
-        mKcalSaturation.setInitValue(mPrefs.getInt(KEY_KCAL_SATURATION, 256));
-        mKcalSaturation.setOnPreferenceChangeListener(this);
-
-        mKcalContrast = (SeekBarPreference) findPreference(KEY_KCAL_CONTRAST);
-        mKcalContrast.setInitValue(mPrefs.getInt(KEY_KCAL_CONTRAST, 256));
-        mKcalContrast.setOnPreferenceChangeListener(this);
-
-        mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
-        mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-        mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-=======
         mKcalRed.setInitValue(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red));
         mKcalRed.setOnPreferenceChangeListener(this);
 
@@ -157,7 +115,6 @@ public class DisplayCalibration extends PreferenceActivity implements
         mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red));
         mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, mDefaultParams.green));
         mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, mDefaultParams.blue));
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
 
     }
 
@@ -166,22 +123,6 @@ public class DisplayCalibration extends PreferenceActivity implements
     }
 
     public static void restore(Context context) {
-<<<<<<< HEAD
-       boolean storeEnabled = PreferenceManager
-                .getDefaultSharedPreferences(context).getBoolean(DisplayCalibration.KEY_KCAL_ENABLED, false);
-       if (storeEnabled) {
-           Utils.writeValue(COLOR_FILE, "1");
-           int storedRed = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_RED, 256);
-           int storedGreen = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_GREEN, 256);
-           int storedBlue = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_BLUE, 256);
-           int storedSaturation = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_SATURATION, 255);
-           int storedContrast = PreferenceManager
-                   .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_CONTRAST, 255);
-=======
        boolean storeEnabled = PreferenceManager.getDefaultSharedPreferences(context).getBoolean(DisplayCalibration.KEY_KCAL_ENABLED, Utils.isNotDefaultPanel());
 
        mDefaultParams = Utils.getParams();
@@ -199,7 +140,6 @@ public class DisplayCalibration extends PreferenceActivity implements
                    .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_SATURATION, mDefaultParams.saturation);
            int storedContrast = PreferenceManager
                    .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_CONTRAST, mDefaultParams.contrast);
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
            String storedValue = ((String) String.valueOf(storedRed)
                    + " " + String.valueOf(storedGreen) + " " +  String.valueOf(storedBlue));
            Utils.writeValue(COLOR_FILE, storedValue);
@@ -209,8 +149,6 @@ public class DisplayCalibration extends PreferenceActivity implements
     }
 
     @Override
-<<<<<<< HEAD
-=======
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.kcal_menu, menu);
@@ -218,26 +156,20 @@ public class DisplayCalibration extends PreferenceActivity implements
     }
 
     @Override
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 return true;
-<<<<<<< HEAD
-=======
             case R.id.menu_reset:
                 reset();
                 return true;
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-<<<<<<< HEAD
-=======
     public void reset() {
         int red = mKcalRed.reset(mDefaultParams.red);
         int green = mKcalGreen.reset(mDefaultParams.green);
@@ -261,22 +193,11 @@ public class DisplayCalibration extends PreferenceActivity implements
         mKcalColorTemp.setValue(cct);
     }
 
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mKcalEnabled) {
             Boolean enabled = (Boolean) newValue;
             mPrefs.edit().putBoolean(KEY_KCAL_ENABLED, enabled).commit();
-<<<<<<< HEAD
-            mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
-            mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-            mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-            String mSaturation = String.valueOf(mPrefs.getInt(KEY_KCAL_SATURATION, 256));
-            String mContrast = String.valueOf(mPrefs.getInt(KEY_KCAL_CONTRAST, 256));
-            Utils.writeValue(COLOR_FILE_ENABLE, enabled ? "1" : "0");
-            Utils.writeValue(COLOR_FILE_SATURATION, mSaturation);
-            Utils.writeValue(COLOR_FILE_CONTRAST, mContrast);
-=======
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, mDefaultParams.blue));
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, mDefaultParams.green));
@@ -292,17 +213,10 @@ public class DisplayCalibration extends PreferenceActivity implements
 
             int cct = Utils.KfromRGB(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red), mPrefs.getInt(KEY_KCAL_GREEN, mDefaultParams.green), mPrefs.getInt(KEY_KCAL_BLUE, mDefaultParams.blue));
             mKcalColorTemp.setValue(cct);
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
             return true;
         } else if (preference == mKcalRed) {
             float val = Float.parseFloat((String) newValue);
             mPrefs.edit().putInt(KEY_KCAL_RED, (int) val).commit();
-<<<<<<< HEAD
-            mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-            mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-            String strVal = ((String) newValue + " " + mGreen + " " +mBlue);
-            Utils.writeValue(COLOR_FILE, strVal);
-=======
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, mDefaultParams.green));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, mDefaultParams.blue));
             String strVal = ((String) newValue + " " + mGreen + " " +mBlue);
@@ -310,17 +224,10 @@ public class DisplayCalibration extends PreferenceActivity implements
 
             int cct = Utils.KfromRGB(val, mPrefs.getInt(KEY_KCAL_GREEN, mDefaultParams.green), mPrefs.getInt(KEY_KCAL_BLUE, mDefaultParams.blue));
             mKcalColorTemp.setValue(cct);
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
             return true;
         } else if (preference == mKcalGreen) {
             float val = Float.parseFloat((String) newValue);
             mPrefs.edit().putInt(KEY_KCAL_GREEN, (int) val).commit();
-<<<<<<< HEAD
-            mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
-            mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-            String strVal = ((String) mRed + " " + newValue + " " +mBlue);
-            Utils.writeValue(COLOR_FILE, strVal);
-=======
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, mDefaultParams.blue));
             String strVal = ((String) mRed + " " + newValue + " " +mBlue);
@@ -328,17 +235,10 @@ public class DisplayCalibration extends PreferenceActivity implements
 
             int cct = Utils.KfromRGB(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red), val, mPrefs.getInt(KEY_KCAL_BLUE, mDefaultParams.blue));
             mKcalColorTemp.setValue(cct);
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
             return true;
         } else if (preference == mKcalBlue) {
             float val = Float.parseFloat((String) newValue);
             mPrefs.edit().putInt(KEY_KCAL_BLUE, (int) val).commit();
-<<<<<<< HEAD
-            mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
-            mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-            String strVal = ((String) mRed + " " + mGreen + " " +newValue);
-            Utils.writeValue(COLOR_FILE, strVal);
-=======
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red));
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, mDefaultParams.green));
             String strVal = ((String) mRed + " " + mGreen + " " +newValue);
@@ -346,7 +246,6 @@ public class DisplayCalibration extends PreferenceActivity implements
 
             int cct = Utils.KfromRGB(mPrefs.getInt(KEY_KCAL_RED, mDefaultParams.red), mPrefs.getInt(KEY_KCAL_GREEN, mDefaultParams.green), val);
             mKcalColorTemp.setValue(cct);
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
             return true;
         } else if (preference == mKcalSaturation) {
             float val = Float.parseFloat((String) newValue);
@@ -360,8 +259,6 @@ public class DisplayCalibration extends PreferenceActivity implements
             String strVal = (String) newValue;
             Utils.writeValue(COLOR_FILE_CONTRAST, strVal);
             return true;
-<<<<<<< HEAD
-=======
         } else if (preference == mKcalColorTemp) {
             int val = Integer.parseInt((String) newValue);
             int[] colorTemp = Utils.RGBfromK(val);
@@ -379,13 +276,7 @@ public class DisplayCalibration extends PreferenceActivity implements
 
             String storedValue = Integer.toString(red) + " " + Integer.toString(green) + " " +  Integer.toString(blue);
             Utils.writeValue(COLOR_FILE, storedValue);
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
         }
         return false;
     }
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x

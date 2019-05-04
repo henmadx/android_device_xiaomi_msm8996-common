@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Copyright (C) 2013 The OmniROM Project
-<<<<<<< HEAD
-
-=======
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 2 of the License, or
@@ -14,10 +10,6 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-<<<<<<< HEAD
-
-=======
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
@@ -44,19 +36,6 @@
         android:fadingEdge="horizontal"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     <RelativeLayout
-<<<<<<< HEAD
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@android:id/summary" >
-        <TextView
-            android:id="@+id/monitor_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-=======
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@android:id/summary" >
@@ -72,7 +51,6 @@
             android:singleLine="true"
             android:background="@android:color/transparent"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
         <SeekBar
             android:id="@+id/seek_bar"
             android:layout_width="fill_parent"
@@ -83,7 +61,3 @@
             android:progress="256" />
     </RelativeLayout>
 </RelativeLayout>
-<<<<<<< HEAD
-
-=======
->>>>>>> 37822b80... msm8996-common: Fix ConfigPanel for AOSP-9.x
