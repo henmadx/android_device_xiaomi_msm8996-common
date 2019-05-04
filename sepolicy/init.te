@@ -1,7 +1,9 @@
 allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
 allow init debugfs:file write;
-allow init sysfs_qc:dir write;
-allow init kcal_dev:dir write;
+
+allow init sysfs_qc dalvikcache_data_file:dir create_dir_perms;
+allow init kcal_dev dalvikcache_data_file:dir create_dir_perms;
+
 allow init untrusted_app:fd { use };
 allow init hidl_memory_hwservice:hwservice_manager { find };
 allow init untrusted_app_25:fd { use };
