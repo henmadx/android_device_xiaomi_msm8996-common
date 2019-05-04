@@ -64,24 +64,6 @@
     <string name="kcal_saturation">Saturation</string>
     <string name="kcal_contrast">Constrast</string>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <!-- Vibrator -->
-    <string name="vibrator_category">Vibrator</string>
-    <string name="vibrator_title">Strength</string>
-    <string name="vibrator_summary">Define the strength of the vibrator</string>
-    <string name="vibrator_test">Test</string>
-<<<<<<< HEAD
-<<<<<<< HEAD
-</resources>
-=======
-=======
->>>>>>> c2a05964... configpanel works
-
-=======
->>>>>>> e43d45f0... test
-=======
->>>>>>> e43d45f0... test
     <!-- QC3.0 Charge limit -->
     <string name="qc3_category">Charging limit</string>
     <string name="qc3_title">QC3.0 charging limit</string>
@@ -98,4 +80,3 @@
     <string name="qc3_3000">3000 ma (Not recommended)</string>
 
 </resources>
->>>>>>> 0f0d7fac... New device settings
