@@ -433,7 +433,7 @@
     <bool name="config_button_brightness_support">true</bool>
     <integer name="config_deviceHardwareKeys">83</integer>
     <integer name="config_button_brightness_default">128</integer>
-    <integer name="config_deviceHardwareWakeKeys">69</integer>
+    <integer name="config_deviceHardwareWakeKeys">64</integer>
 
     <!-- Whether to enable smart clock feature -->
     <bool name="config_enableSmartClock">true</bool>
@@ -464,6 +464,14 @@
     <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
    <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
 
+    <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
+    <bool name="config_supportAudioSourceUnprocessed">true</bool>
 
+    <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
+    <bool name="config_custom_swipe_up_gesture_setting_available">true</bool>
+
+    <!-- Check proximity sensor on wake -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
 </resources>

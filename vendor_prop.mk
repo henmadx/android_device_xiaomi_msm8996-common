@@ -96,6 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.enable_hwc_vds=1 \
+    debug.cpurend.vsync=false \
     debug.hwui.renderer=skiagl \
     debug.composition.type=c2d \
     debug.mdpcomp.idletime=600 \
