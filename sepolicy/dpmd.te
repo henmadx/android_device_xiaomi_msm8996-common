@@ -1,1 +1,6 @@
+allow dpmd self:capability sys_admin;
 allow dpmd system_file:dir {search open read};
+
+allow dpmd diag_device:chr_file { read write };
+allow dpmd diag_device:chr_file open;
+allow dpmd diag_device:chr_file ioctl;

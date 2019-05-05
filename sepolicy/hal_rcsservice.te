@@ -1,2 +1,7 @@
 allow hal_rcsservice sysfs:file r_file_perms;
 set_prop(hal_rcsservice, system_prop)
+
+userdebug_or_eng(`
+  allow hal_rcsservice diag_device:chr_file rw_file_perms;
+')
+dontaudit hal_rcsservice diag_device:chr_file rw_file_perms;

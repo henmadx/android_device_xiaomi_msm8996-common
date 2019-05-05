@@ -3,3 +3,4 @@ allow mm-qcamerad camera_socket:sock_file { create unlink write };
 allow mm-qcamerad camera_data_file:dir search;
 allow mm-qcamerad sysfs:file {open read};
 allow mm-qcamerad sysfs_graphics:file {open read};
+set_prop(mm-qcamerad, camera_prop)

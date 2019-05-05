@@ -1,0 +1,5 @@
+userdebug_or_eng(`
+  allow netutils_wrapper diag_device:chr_file { read write };
+')
+# Ignore in user builds
+dontaudit netutils_wrapper diag_device:chr_file { read write };
