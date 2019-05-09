@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2019 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -105,11 +105,6 @@ DEVICE_SPECIFIC_CAMERA_PATH := $(VENDOR_PATH)/camera
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
-
-#BOARD_HARDWARE_CLASS += \
-    $(VENDOR_PATH)/cmhw
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
-TARGET_HAS_NO_WLAN_STATS := true
 
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
