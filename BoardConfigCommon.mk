@@ -21,6 +21,8 @@ VENDOR_PATH := device/xiaomi/msm8996-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -54,9 +56,6 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_USE_SDCLANG := true
-SDCLANG_FLAGS        := -O3 -fvectorize -Wno-vectorizer-no-neon -Wno-user-defined-warnings
-SDCLANG_FLAGS_2      := -O3 -fvectorize -Wno-vectorizer-no-neon -Wno-user-defined-warnings
-SDCLANG_COMMON_FLAGS := -O3 -fvectorize -Wno-vectorizer-no-neon -Wno-user-defined-warnings
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
