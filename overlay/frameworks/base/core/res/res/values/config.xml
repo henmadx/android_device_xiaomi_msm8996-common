@@ -464,7 +464,7 @@
     <bool name="config_button_brightness_support">true</bool>
     <integer name="config_deviceHardwareKeys">83</integer>
     <integer name="config_button_brightness_default">128</integer>
-    <integer name="config_deviceHardwareWakeKeys">64</integer>
+    <integer name="config_deviceHardwareWakeKeys">69</integer>
 
    <!-- Whether device ignores the RSSNR signal implementation -->
    <bool name="config_ignoreRssnrSignalLevel">true</bool>
@@ -500,7 +500,5 @@
      <!-- Does the notification LED support multiple colors?
          Used to decide if the user can change the colors -->
      <bool name="config_multiColorNotificationLed">true</bool>
-	    
-    <!-- True if the home button has the ability to wake up phone from lockscreen-->
-    <bool name="config_HomeWakeButton">true</bool>
+
 </resources>
