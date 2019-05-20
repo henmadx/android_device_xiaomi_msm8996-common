@@ -54,7 +54,8 @@ PRODUCT_GENERIC_PROPERTIES += \
 
 
 # HWUI and Dalvik VM overrides
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, vendor/revengeos/build/configs/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, vendor/revengeos/build/configs/phone-xxhdpi-3072-hwui-memory.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
