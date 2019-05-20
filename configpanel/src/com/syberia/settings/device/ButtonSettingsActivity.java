@@ -17,6 +17,8 @@
 
 package com.syberia.settings.device;
 
+package com.syberia.settings.device;
+
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,23 +44,12 @@ import com.syberia.settings.device.utils.Utils;
 
 public class ButtonSettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener{
 
-	private Preference mKcalPref;
     private VibratorStrengthPreference mVibratorStrength;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.button_panel);
-
-        mKcalPref = findPreference("kcal");
-                mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                     @Override
-                     public boolean onPreferenceClick(Preference preference) {
-                         Intent intent = new Intent(ButtonSettingsActivity.this, DisplayCalibration.class);
-                         startActivity(intent);
-                         return true;
-                     }
-                });
 
         mVibratorStrength = (VibratorStrengthPreference) findPreference("vibrator_key");
         if (mVibratorStrength != null) {
