@@ -16,13 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <string name="summary_empty" translatable="false"></string>
-
-    <!-- Category title -->
-    <string name="buttons_title">Hadware Buttons</string>
-    <string name="graphics_title">Graphics</string>
-
     <!-- Application title -->
     <string name="device_settings_app_name">Advanced settings</string>
 
@@ -45,10 +38,7 @@
     <string name="fp_wakeup_title">Fingerprint wakes device</string>
     <string name="fp_wakeup_summary">Allow fingerprint to wake the device while screen is off</string>
 
-    <!-- Vibrator -->
-    <string name="vibrator_category">Vibrator</string>
-    <string name="vibrator_title">Strength</string>
-    <string name="vibrator_summary">Define the strength of the vibrator</string>
-    <string name="vibrator_test">Test</string>
+    <string name="fingerprint_pocketmode_title">Prevent accidental wake-up</string>
+    <string name="fingerprint_pocketmode_summary">Check the proximity sensor prior to wake-ups triggered by the fingerprint sensor</string>
 
 </resources>

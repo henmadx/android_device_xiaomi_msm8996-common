@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.syberia.settings.device.utils;
+package com.cyanogenmod.settings.device.utils;
 
 import android.util.Log;
 
@@ -40,7 +40,7 @@ public final class FileUtils {
      * @return the read line contents, or null on failure
      */
     public static String readOneLine(String fileName) {
-        String line =  "";
+        String line = null;
         BufferedReader reader = null;
 
         try {
