@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2019 HENMADX
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +22,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     ro.af.client_heap_size_kbyte=7168 \
     audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=30 \
+    audio.offload.min.duration.secs=15 \
     audio.offload.video=true \
     hpx_send_params=1 \
     persist.vendor.audio.fluence.speaker=true \
@@ -51,7 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.use.dts_eagle=true \
     vendor.voice.path.for.pcm.voip=true
 
-
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
@@ -74,12 +74,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.eis.enable=1 \
     persist.camera.imglib.fddsp=1
 
-# CNE & DPM
+# CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.dpm.enable=true  \
-    persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=11 \
-    persist.env.fastdorm.enabled=true
+    persist.vendor.cne.feature=1
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -97,6 +94,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qcom.ad.calib.data=/system/etc/calib.cfg \
     ro.qcom.ad.sensortype=2 \
     ro.vendor.display.cabl=0
+
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.dpm.enable=true \
+    persist.vendor.dpm.feature=11 \
+    persist.vendor.dpm.tcm=2 \
+    persist.env.fastdorm.enabled=true
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -119,13 +123,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
     debug.gralloc.gfx_ubwc_disable=0 \
-    debug.sf.hw=1 \
-    debug.sf.latch_unsignaled=1 \
     debug.sf.enable_hwc_vds=1 \
+    debug.sf.hw=1 \
     debug.cpurend.vsync=false \
+    debug.sf.latch_unsignaled=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
+    persist.sys.wfd.virtual=0 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=480 \
     vendor.display.disable_rotator_split=1 \
@@ -134,24 +139,68 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     vendor.gralloc.enable_fb_ubwc=1
 
-# IMS
+# IMS / VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.jbims=1 \
+    persist.radio.RATE_ADAPT_ENABLE=1 \
+    persist.radio.VT_CAM_INTERFACE=2 \
+    persist.radio.VT_ENABLE=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    persist.radio.VT_USE_MDM_TIME=0 \
+    persist.ims.disableADBLogs=2 \
+    persist.ims.disableDebugLogs=0 \
+    persist.ims.disableIMSLogs=0 \
+    persist.ims.disableQXDMLogs=0 \
+    persist.ims.rcs=false \
+    persist.ims.volte=true \
+    persist.ims.vt=false \
+    persist.ims.vt.epdg=false \
+    persist.mm.sta.enable=0 \
+    persist.vt.supported=0 \
+    persist.volte_enabled_by_hw=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.ims_volte_enable=1 \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.ims_volte_enable=1  \
-    persist.dbg.wfc_avail_ovr=1
-
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.vendor.ims.dropset_feature=0 \
+    persist.vendor.radio.force_on_dc=true \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.ignore_dom_time=10 \
+    persist.radio.ignore_dom_time=10 \
+    persist.radio.is_wps_enabled=true \
+    persist.radio.videopause.mode=1 \
+    persist.radio.sap_silent_pin=1 \
+    persist.radio.always_send_plmn=true \
+    persist.rcs.supported=1 \
+    persist.vendor.radio.qcril_uim_vcc_feature=1 \
+    persist.radio.schd.cache=3500 \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.lte_vrte_ltd=1 \
+    persist.vendor.radio.cs_srv_type=1 
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
-    mm.enable.sec.smoothstreaming=true
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    mm.enable.sec.smoothstreaming=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
+    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.sys.fw.bservice_limit=5 \
+    ro.vendor.qti.sys.fw.bservice_age=5000
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=4m \
+    dalvik.vm.heapmaxfree=8m
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -213,6 +262,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=6a00000.dwc3
 
+# Additional Prop
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.cgroup_follow.enable=true \
     persist.vendor.qti.inputopts.enable=true \
