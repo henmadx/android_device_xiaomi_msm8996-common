@@ -577,6 +577,12 @@ vendor/lib/vendor.display.color@1.0.so|f3acc62f826200030db8a565aeab4445c6fb53ef
 vendor/lib/vendor.display.color@1.1.so|14b300ee70a56291f2c249b4702365b48065f2b6
 vendor/lib/vendor.display.color@1.2.so|57c6f933d1dee9a8ca2333a26ee099865a85d497
 vendor/lib/vendor.display.postproc@1.0.so|9d8a501145eea8f6cc28afaeb539942af7df6136
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so|e0fd5a17e9ce0fddda384b9810acd736e5905458
+lib/vendor.qti.hardware.qdutils_disp@1.0.so|c5cb5854abc981b1c26ba3a95c1e1d834e616001
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|2536d249be2b723821eae12a505c737e2c6f7681
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|e0fd5a17e9ce0fddda384b9810acd736e5905458
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|c5cb5854abc981b1c26ba3a95c1e1d834e616001
 
 # Power-off alarm - from daisy 9/PKQ1.180917.001/V10.0.7.0.PDLMIXM
 framework/vendor.qti.hardware.alarm-V1.0-java.jar|ca5bf830ebb4fbf8fc1994200ec6e03dc83c274b
@@ -707,6 +713,15 @@ vendor/lib64/libthermalioctl.so|0edca2e89fbd872d8595517254669ea7feb1e0b0
 -vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
 vendor/bin/time_daemon|d67f1c50583b5efca0f5baea00a51056a798b7f8
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
+
+
+# TUI - from daisy 9/PKQ1.180917.001/V10.0.7.0.PDLMIXM
+lib/vendor.qti.hardware.tui_comm@1.0.so|8b9f73504547b72f1d1937b80addfdfbd3cbd881
+lib64/vendor.qti.hardware.tui_comm@1.0.so|886be11a566c18744db517c94e2530b68df819b6
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|86c327a8310fcc42f69c85ec0868c630903c7d79
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|8b9f73504547b72f1d1937b80addfdfbd3cbd881
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|886be11a566c18744db517c94e2530b68df819b6
 
 #Wi-Fi Display - from daisy 9/PKQ1.180917.001/V10.0.7.0.PDLMIXM
 bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c
