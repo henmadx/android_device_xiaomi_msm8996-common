@@ -318,6 +318,13 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+#Perf configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/perf/commonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/commonresourceconfigs.xml \
+    $(LOCAL_PATH)/configs/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
+    $(LOCAL_PATH)/configs/perf/targetconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetconfig.xml \
+    $(LOCAL_PATH)/configs/perf/targetresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetresourceconfigs.xml
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.gemini-libperfmgr
@@ -333,6 +340,19 @@ PRODUCT_COPY_FILES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson
+
+#QTI Performance
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
+
+PRODUCT_GENERIC_PROPERTIES += \
+    vendor.enable_prefetch=1 \
+    vendor.iop.enable_uxe=1 \
+    vendor.iop.enable_prefetch_ofr=1 \
+    vendor.perf.iop_v3.enable=1 \
+    ro.vendor.at_library=libqti-at.so \
+    persist.vendor.qti.games.gt.prof=1
 
 # RCS
 PRODUCT_PACKAGES += \

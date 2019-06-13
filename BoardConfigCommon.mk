@@ -53,7 +53,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
-KERNEL_TOOLCHAIN := $(ANDROID_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-9.1/bin
+KERNEL_TOOLCHAIN := /root/syb/prebuilts/gcc/host/linux-x86/9.1/bin
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
