@@ -18,7 +18,7 @@
 
 namespace device {
 namespace xiaomi {
-namespace gemini {
+namespace capricorn {
 namespace health {
 
 static constexpr char kChgFullFile[] = "sys/class/power_supply/bms/charge_full";
@@ -109,6 +109,6 @@ void LearnedCapacityBackupRestore::UpdateAndSave() {
 }
 
 }  // namespace health
-}  // namespace gemini
+}  // namespace capricorn
 }  // namespace xiaomi
 }  // namespace device
