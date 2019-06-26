@@ -335,13 +335,67 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
+ 
+    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
+         before setting power profiles on boot. -->
+    <bool name="config_waitForMpctlOnBoot">true</bool>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
+
+    <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
+         For this time after the screen turns on, the Power Manager
+         will not debounce light sensor readings -->
+    <integer name="config_lightSensorWarmupTime">200</integer>
+
+    <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
+    <bool name="doze_display_state_supported">true</bool>
+
+    <!-- Control whether the always on display mode is available. This should only be enabled on
+         devices where the display has be tuned to be power efficient in DOZE and/or DOZE_SUSPEND
+         states. -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- Whether the display blanks itself when going from a doze to a non-doze state -->
+    <bool name="config_displayBlanksAfterDoze">true</bool>
+
+    <!-- Specify custom blanking delay of the display -->
+    <integer name="config_screen_off_delay">0</integer>
+
+    <!-- Alternate ambient display-->
+    <bool name="config_alt_ambient_display">true</bool>
+
+    <!-- Disable AOD by default -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
+    <!-- Button Fix -->
     <bool name="config_button_brightness_support">true</bool>
-
-
     <integer name="config_deviceHardwareKeys">83</integer>
+    <integer name="config_button_brightness_default">128</integer>
     <integer name="config_deviceHardwareWakeKeys">69</integer>
-    <bool name="config_cleanupUnusedFingerprints">false</bool>
-       <!-- Whether device needs to wait for Qualcomm MPCTL service to start
-                before setting power profiles on boot. -->
-   <bool name="config_waitForMpctlOnBoot">true</bool>
+
+   <!-- Whether device ignores the RSSNR signal implementation -->
+   <bool name="config_ignoreRssnrSignalLevel">true</bool>
+
+    <!-- Enable dual LTE capability support-->
+    <bool name="config_dual_LTE_capability">true</bool>
+
+    <!-- Should the pinner service pin the Home application? -->
+    <bool name="config_pinnerHomeApp">true</bool>
+
+    <!-- Values for GPS configuration -->
+    <string-array translatable="false" name="config_gpsParameters">
+        <item>SUPL_HOST=supl.google.com</item>
+        <item>SUPL_PORT=7275</item>
+        <item>SUPL_VER=0x20000</item>
+        <item>SUPL_MODE=1</item>
+        <item>SUPL_ES=1</item>
+        <item>LPP_PROFILE=0</item>
+        <item>USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL=1</item>
+        <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
+        <item>GPS_LOCK=0</item>
+    </string-array>
+
+    <!-- True if the device supports Sustained Performance Mode-->
+    <bool name="config_sustainedPerformanceModeSupported">true</bool>
 </resources>
