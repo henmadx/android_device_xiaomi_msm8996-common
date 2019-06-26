@@ -67,10 +67,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.camera.ts.monotonic=0 \
+    persist.camera.HAL3.enabled=1 \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.android.GoogleCamera \
     persist.camera.gyro.disable=0 \
-    persist.camera.imglib.fddsp=1 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.google.android.GoogleCamera \
-    persist.camera.eis.enable=1
+    persist.camera.eis.enable=1 \
+    persist.camera.imglib.fddsp=1
 
 # CNE & DPM
 PRODUCT_PROPERTY_OVERRIDES += \
