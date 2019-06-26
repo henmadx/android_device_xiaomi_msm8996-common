@@ -330,7 +330,7 @@ include device/xiaomi/capricorn/rootdir/charger/charger.mk
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.gemini-libperfmgr
+    android.hardware.power@1.2-service.capricorn-libperfmgr
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
