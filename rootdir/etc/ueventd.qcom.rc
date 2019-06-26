@@ -127,7 +127,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/sp_ssr               0660   system     system
 /dev/sp_keymaster         0660   system     system
 /dev/cryptoapp            0660   system     system
-/dev/gemini0              0660   system     camera
+/dev/capricorn0              0660   system     camera
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
 /dev/jpeg2                0660   system     camera
@@ -141,7 +141,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/byte-cntr            0660   system    oem_2902
 
 /dev/msm_camera/*         0660   system     camera
-/dev/gemini/              0660   system     camera
+/dev/capricorn/              0660   system     camera
 /dev/mercury0             0660   system     camera
 /dev/msm_vidc_reg         0660   system     audio
 /dev/msm_vidc_dec         0660   system     audio
