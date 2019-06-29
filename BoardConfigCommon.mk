@@ -54,6 +54,11 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-9.1/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
+TARGET_USE_SDCLANG := true
+SDCLANG_PATH := $(PWD)/prebuilts/sd_clang/prebuilt/linux-x86_64/bin
+SDCLANG_PATH_2 := $(PWD)/prebuilts/sd_clang/prebuilt/linux-x86_64/bin
+SDCLANG_FLAGS := -Ofast -mcpu=cortex-a57 -mdefault-to-arm -Wno-vectorizer-no-neon -Wno-deprecated-register -Wno-tautological-type-limit-compare -Wno-unknown-warning-option
+SDCLANG_FLAGS_2 := -Ofast -mcpu=cortex-a57 -mdefault-to-arm -Wno-vectorizer-no-neon -Wno-deprecated-register -Wno-tautological-type-limit-compare -Wno-unknown-warning-option
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
@@ -194,7 +199,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_USE_SDCLANG := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
