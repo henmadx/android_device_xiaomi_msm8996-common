@@ -653,6 +653,13 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
 
+on property:vendor.post_boot.parsed=1
+
+    # Setup permission for powerHAL
+    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
+    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
+    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
+
 on property:init.svc.surfaceflinger=restarting
     stop vendor.hwcomposer-2-1
     start vendor.hwcomposer-2-1
