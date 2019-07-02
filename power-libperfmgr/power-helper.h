@@ -34,8 +34,6 @@
 extern "C" {
 #endif
 
-#include <hardware/power.h>
-
 enum stats_type {
     //Platform Stats
     RPM_MODE_XO = 0,
@@ -48,11 +46,14 @@ enum stats_type {
     VOTER_SLPI,
     MAX_PLATFORM_STATS,
 
+#ifndef NO_WLAN_STATS
     //WLAN Stats
     WLAN_POWER_DEBUG_STATS = 0,
     MAX_WLAN_STATS,
+#endif
 };
 
+#ifndef NO_WLAN_STATS
 enum subsystem_type {
     SUBSYSTEM_WLAN = 0,
 
@@ -77,7 +78,7 @@ enum wlan_power_params {
     //Don't add any lines after this line
     WLAN_POWER_PARAMS_COUNT
 };
-
+#endif
 
 #define PLATFORM_SLEEP_MODES_COUNT RPM_MODE_MAX
 
@@ -93,9 +94,9 @@ struct stat_pair {
 };
 
 int extract_platform_stats(uint64_t *list);
+#ifndef NO_WLAN_STATS
 int extract_wlan_stats(uint64_t *list);
-void set_device_specific_feature(feature_t feature, int state);
-void set_feature(feature_t feature, int state);
+#endif
 
 #ifdef __cplusplus
 }
