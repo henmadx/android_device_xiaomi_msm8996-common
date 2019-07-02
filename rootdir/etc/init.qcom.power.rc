@@ -179,6 +179,8 @@ on enable-low-power
     write /proc/sys/kernel/sched_upmigrate_min_nice 9
 
     # Set PowerHal properties
+    setprop vendor.powerhal.init 1
+
     # Set perfd properties
     setprop vendor.post_boot.parsed 1
 
@@ -199,11 +201,6 @@ on property:sys.boot_completed=1
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/restricted/cpus 0-1
-
-    # Setup permission for powerHAL
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
 
 on property:init.svc.recovery=running
     trigger enable-low-power
