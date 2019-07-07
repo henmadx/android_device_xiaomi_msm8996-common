@@ -110,14 +110,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-
+# Fling Velocity
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.gralloc.enable_fb_ubwc=1 \
-    vendor.gralloc.disable_wb_ubwc=1 \
-    vendor.display.disable_skip_validate=1 \
-    vendor.display.rotator_downscale=1 \
-    vendor.display.perf_hint_window=50 \
-    vendor.display.enable_default_color_mode=0
+    ro.min.fling_velocity=160 \
+    ro.max.fling_velocity=20000
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -210,7 +206,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.sys.fw.bg_apps_limit=60
+    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+    vendor.perf.gestureflingboost.enable=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.bt.enableAptXHD=true
@@ -271,6 +268,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.iop.enable_uxe=1 \
     vendor.iop.enable_prefetch_ofr=1 \
     vendor.perf.iop_v3.enable=1 \
+    vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.gralloc.disable_wb_ubwc=1 \
+    vendor.display.disable_skip_validate=1 \
+    vendor.display.rotator_downscale=1 \
+    vendor.display.perf_hint_window=50 \
+    vendor.display.enable_default_color_mode=0
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
