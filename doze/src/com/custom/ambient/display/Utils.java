@@ -21,9 +21,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.UserHandle;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
 
 import com.android.internal.hardware.AmbientDisplayConfiguration;
 import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
