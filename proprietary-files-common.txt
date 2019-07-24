@@ -360,7 +360,7 @@ vendor/lib64/vendor.qti.gnss@1.1.so|a622c409e1d20d2799904e47d8fb07753e830d7a
 vendor/lib64/vendor.qti.gnss@1.2.so|104f245c358ab202a57211f99898406cd5ad8e0e
 vendor/lib64/vendor.qti.gnss@2.0.so|b3f7ae76d4db00edce0c4f5a7084d7abeac0180a
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
--framework/com.qti.location.sdk.jar|638c7e521d669ee210a1cce7f83bb3e26ff5ebac
+-framework/com.qti.location.sdk.jar|ad4ee06ff8ce36899faebd31d6453b74c5154cdb
 
 # Graphics - from LA.UM.7.5.r1-04800-8x96.0
 vendor/lib64/egl/eglSubDriverAndroid.so|74d486294baa0258bd066de78a4f953a396da1d7
