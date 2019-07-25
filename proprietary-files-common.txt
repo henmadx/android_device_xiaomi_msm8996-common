@@ -1,15 +1,19 @@
-# ADSP - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
-vendor/bin/adsprpcd|8b439846f016decb7519e5fd5cb2c86e192af036
-vendor/lib64/libadsprpc.so|66ac8f836101bc7563432d168890827d878acd42
-vendor/lib64/libadsp_default_listener.so|d28ea3a0509c13ff75c700efe1107bb2d2481eb6
-vendor/lib64/libfastcvadsp_stub.so|0cbdc83819780d8aa7cb8707633439db330b655d
-vendor/lib64/libfastcvopt.so|39423b9830f4eee217d9a4064a0c7449ff78acfb
-vendor/lib/libadsprpc.so|756fc8ea0395866ee578030ac72fddedba288f97
-vendor/lib/libadsp_default_listener.so|ca63c1b2c34bbde74c2b1fc6009ca244a1ffa535
-vendor/lib/libadsp_hvx_callback_skel.so|dc7080c68699f69f76260891ebcedcd68a093d40
-vendor/lib/libadsp_hvx_stub.so|4fa14ca235ace82551549b571f767f475fbf4b67
+# ADSP - from LA.UM.7.5.r1-04800-8x96.0
+vendor/bin/adsprpcd|ef200e3bce4429fd9461c74330a003f069ffd5b3
+vendor/lib64/libcdsprpc.so|eff806038c24c25eb0146559c72b1fa4ae3cc8a5
+vendor/lib64/libsdsprpc.so|1e2d86912624b37622ea7a5314be57fae95d6a4d
+vendor/lib64/libadsprpc.so|bc7504a5c64c73748927404be5ccfe4015146d25
+vendor/lib64/libadsp_default_listener.so|e1d57433c5af24e3227b679367c133dde1014714
+vendor/lib64/libfastcvadsp_stub.so|e25929713605e70417dee54b362b98d04a860f47
+vendor/lib64/libfastcvopt.so|28fa9dc4b44e86a9c1e722e5705adf047dd35d50
+vendor/lib/libadsprpc.so|76cf6bd3975e933f1bec55499da3c3e7a17a9e6d
+vendor/lib/libadsp_default_listener.so|d9de89d55eba2d35a7583584b51335a663705fa7
+vendor/lib/libadsp_hvx_callback_skel.so|b7e47d8d0c011caea30daf974de81eb01bb90268
+vendor/lib/libadsp_hvx_stub.so|5842e47b5929e15c8b63f1aa4795ca3432debebb
+vendor/lib/libfastcvopt.so|797b9843ccc1f650d66831d645db2bc96b89c299
 vendor/lib/libfastcvadsp_stub.so|7811d12d68ec3f9fcbd05f55264b6dcec61bc75b
-vendor/lib/libfastcvopt.so|d76563220d8d504a9dce1091a52482a8d932858d
+vendor/lib/libcdsprpc.so|a4b6ee7be7170ce6cbd347cde06754f6759d2608
+vendor/lib/libsdsprpc.so|1bf2e7c12be0cf22a0cb8b1d960e609e5722c950
 
 # ADSP modules - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so|8305c614ebf13f84f15989631b8fdfdb9828d9be
@@ -681,14 +685,12 @@ vendor/radio/qcril_database/qcril.db
 vendor/bin/sensors.qti|18011d46135a2635bcfdc34e8b4d3fdaff7a76fb
 vendor/etc/sensors/hals.conf|bf3677cbfa5ce5735662e8c259cb027969f65c87
 vendor/etc/sensors/sensor_def_qcomdev.conf|b0d21e39bf33cf88a76d70871cb281cf8c0ac3f6
-vendor/lib/libsdsprpc.so|6ab1f21553ca33514958cdd501c672eab9838e6c
 vendor/lib/libsensor1.so|d73573eca4e1eaf52f09f9cc7292cdc6d9d69c70
 vendor/lib/libsensor_reg.so|2d95cea1df93dcaae0f067157f6932c1381dec53
 vendor/lib/libsensor_cit.so|154e5f5f6f0f6bf0342768814542d1e6ce1c4a6d
 vendor/lib/libsensor_crosstalk.so|0654699d57a1c278ad72c29007b913f61dda3385
 vendor/lib/libsensor_test.so|ddb9a546d5ceaa0e51f71b59851ff3edc0b29a9c
 vendor/lib/libsensor_user_cal.so|d86ae521c74f9a65cafc219f98d61c16059ad46b
-vendor/lib64/libsdsprpc.so|fc1325b8e76a125f6608a0086712dba894151c11
 vendor/lib64/libsensor1.so|1934268e2f28ee9d705d5ff060544d06e42afcc3
 vendor/lib64/libsensor_reg.so|942fbf9ef1cfc87596f850e7ff1a86e7a9ddc846
 vendor/lib64/sensors.ssc.so|e49e3c585da09b323948e1c1201118d426f3d558
