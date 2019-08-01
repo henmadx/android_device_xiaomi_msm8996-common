@@ -23,7 +23,8 @@ $(call inherit-product, vendor/xiaomi/msm8996-common/msm8996-common-vendor.mk)
 $(call inherit-product-if-exists, $(LOCAL_PATH)/miuicamera/miuicamera.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay 
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-bootleg 
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
