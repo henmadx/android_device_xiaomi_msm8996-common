@@ -139,10 +139,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.nfc_nci=nqx.default \
     ro.nfc.port=I2C \
     persist.nfc.smartcard.config=SIM1,SIM2,eSE1
-    
+
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
