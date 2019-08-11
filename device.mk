@@ -166,6 +166,9 @@ PRODUCT_PACKAGES += \
 #    init.spectrum.rc \
 #    init.spectrum.sh
 
+# Charger
+include device/xiaomi/capricorn/rootdir/charger/charger.mk
+
 # CMHW
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
