@@ -68,6 +68,13 @@ on fs
     restorecon_recursive /mnt/vendor/persist
 
 on late-fs
+    # Start services for bootanim
+    start servicemanager
+    start vendor.configstore-hal
+    start surfaceflinger
+    start bootanim
+    start vendor.gralloc-2-0
+
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
