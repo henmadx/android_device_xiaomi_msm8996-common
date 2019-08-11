@@ -1,2 +1,5 @@
 allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
 allow init debugfs:file write;
+allow init vendor_file:file execute_no_trans;
+llow init sysfs_devfreq:file write;
+allow init device_latency:chr_file open;
