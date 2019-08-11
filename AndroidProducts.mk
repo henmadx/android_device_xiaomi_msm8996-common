@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The JDCTeam
+# Copyright (C) 2019 The REVENGEOS
 #
 # This file should set PRODUCT_MAKEFILES to a list of product makefiles
 # to expose to the build system.  LOCAL_DIR will already be set to
@@ -12,4 +12,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/revengeos_gemini.mk
+    $(LOCAL_DIR)/revengeos_capricorn.mk

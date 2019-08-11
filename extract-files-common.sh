@@ -19,7 +19,7 @@
 set -e
 
 # Required!
-#export DEVICE=gemini
+#export DEVICE=capricorn
 export DEVICE_COMMON=msm8996-common
 export VENDOR=xiaomi
 
@@ -27,9 +27,9 @@ export VENDOR=xiaomi
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-SYBERIA_ROOT="$MY_DIR"/../../..
+REVENGEOS_ROOT="$MY_DIR"/../../..
 
-HELPER="$SYBERIA_ROOT"/vendor/aosp/build/tools/extract_utils.sh
+HELPER="$REVENGEOS_ROOT"/vendor/aosp/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -58,13 +58,13 @@ if [ -z "$SRC" ]; then
 fi
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$SYBERIA_ROOT" true "$CLEAN_VENDOR"
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$REVENGEOS_ROOT" true "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files-common.txt "$SRC" "$SECTION"
 
 #if [ -s "$MY_DIR"/../$DEVICE/proprietary-files-common.txt ]; then
     # Reinitialize the helper for device
-#    setup_vendor "$DEVICE" "$VENDOR" "$SYBERIA_ROOT" false "$CLEAN_VENDOR"
+#    setup_vendor "$DEVICE" "$VENDOR" "$REVENGEOS_ROOT" false "$CLEAN_VENDOR"
 
 #    extract "$MY_DIR"/../$DEVICE/proprietary-files-common.txt "$SRC" "$SECTION"
 #fi

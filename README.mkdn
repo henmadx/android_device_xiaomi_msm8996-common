@@ -1,0 +1,26 @@
+Copyright (C) 2017-2018 The LineageOS Project
+
+Device configuration for Xiaomi Mi 5s
+=========================================
+
+The Xiaomi Mi 5s (codenamed _"capricorn"_) is a high-end smartphone from Xiaomi.
+
+It was announced in September 2016. Release date was October 2016.
+
+## Device specifications
+
+Basic   | Spec Sheet
+-------:|:-------------------------
+SoC     | Qualcomm MSM8996 Pro Snapdragon 821
+CPU     | Quad-core (2x2.15 GHz Kryo & 2x2.0 GHz Kryo)
+GPU     | Adreno 530 (624 MHz)
+Memory  | 3/4 GB RAM (LPDDR4 1866 MHz dual-channel)
+Shipped Android Version | 6.0.1 with MIUI 7
+Storage | 32/64/128 GB (UFS 2.0 Flash)
+Battery | Non-removable Li-Po 3200 mAh battery
+Display | 1080 x 1920 pixels, 5.15 inches, IPS LCD (~428 ppi density)
+Camera  | 12 MP, f/2.0, phase detection autofocus, dual-LED (dual tone) flash
+
+## Device picture
+
+![Xiaomi Mi 5s](http://xiaomi-mi.com/uploads/CatalogueImage/xiaomi-mi-5s-gray_14506_1475064497.jpg "Xiaomi Mi 5s in black")

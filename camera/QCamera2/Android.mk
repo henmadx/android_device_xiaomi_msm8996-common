@@ -98,7 +98,7 @@ LOCAL_C_INCLUDES := \
 #HAL 1.0 Include paths
 LOCAL_C_INCLUDES += \
         frameworks/native/include/media/hardware \
-        device/xiaomi/gemini/camera/QCamera2/HAL
+        device/xiaomi/capricorn/camera/QCamera2/HAL
 
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
