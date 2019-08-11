@@ -18,7 +18,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/xiaomi/gemini/gemini-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/capricorn/capricorn-vendor.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/msm8996-common/msm8996-common-vendor.mk)
 
 #Miui Camera
@@ -181,7 +181,7 @@ PRODUCT_PACKAGES += \
 
 # Default permissions
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/privapp-permissions-gemini.xml:system/etc/permissions/privapp-permissions-gemini.xml
+    $(LOCAL_PATH)/privapp-permissions-capricorn.xml:system/etc/permissions/privapp-permissions-capricorn.xml
 
 # Display
 PRODUCT_PACKAGES += \
@@ -201,6 +201,17 @@ PRODUCT_COPY_FILES += \
 # Doze mode
 #PRODUCT_PACKAGES += \
 #    XiaomiDoze
+
+# Enable dex pre-opt to speed up initial boot
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+    endif
+  endif
+endif
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -328,7 +339,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_PACKAGES += \
-    librecovery_updater_gemini
+    librecovery_updater_capricorn
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -411,7 +422,7 @@ PRODUCT_PACKAGES += \
     init.tfa.sh \
     tinyplay
 
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware.power=gemini
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.power=capricorn
 
 #Vendor's public libraries
 PRODUCT_COPY_FILES += \

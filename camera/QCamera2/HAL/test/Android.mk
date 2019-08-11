@@ -37,8 +37,8 @@ LOCAL_C_INCLUDES += \
     external/skia/include/core \
     external/skia/include/images \
     $(TARGET_OUT_HEADERS)/qcom/display \
-    device/xiaomi/gemini/camera/QCamera2/stack/common \
-    device/xiaomi/gemini/camera/QCamera2/stack/mm-camera-interface/inc \
+    device/xiaomi/capricorn/camera/QCamera2/stack/common \
+    device/xiaomi/capricorn/camera/QCamera2/stack/mm-camera-interface/inc \
     frameworks/av/include/media/stagefright \
     frameworks/native/include/media/openmax \
     $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
