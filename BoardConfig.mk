@@ -235,6 +235,9 @@ TARGET_RIL_VARIANT := caf
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
+# Telephony
+TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
+
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_capricorn
 TARGET_RECOVERY_DEVICE_MODULES := libinit_capricorn
