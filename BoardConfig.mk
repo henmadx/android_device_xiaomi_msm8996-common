@@ -245,9 +245,16 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_capricorn
 # WebView Beta
 PREBUILT_WEBVIEW_VERSION := chromium
 
-#DEX
-DONT_DEXPREOPT_PREBUILTS := true
-WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+# Enable dex pre-opt to speed up initial boot
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+    endif
+  endif
+endif
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
