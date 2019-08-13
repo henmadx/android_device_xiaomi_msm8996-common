@@ -1,6 +1,5 @@
-allow cnd sysfs:file r_file_perms;
-set_prop(cnd, system_prop)
-userdebug_or_eng(`
-  allow cnd diag_device:chr_file rw_file_perms;
-')
-dontaudit cnd diag_device:chr_file rw_file_perms;
+# Allow cnd to access cnd_core_data_file
+allow cnd cnd_core_data_file:file create_file_perms;
+allow cnd cnd_core_data_file:sock_file { unlink create setattr };
+
+allow cnd system_wpa_socket:sock_file unlink;
