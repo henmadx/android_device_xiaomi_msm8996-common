@@ -6,6 +6,14 @@ allow system_app proc_touchpanel:file rw_file_perms;
 allow system_app sysfs_fpc_keyevents:file rw_file_perms;
 allow system_app sysfs_fpc_wakeup:file rw_file_perms;
 
+# Allow Vibrator to work
+allow system_app sysfs_vibrator:dir search;
+allow system_app sysfs_vibrator:file rw_file_perms;
+
+# Allow QC3 to work
+allow system_app sysfs_qc:file rw_file_perms;
+allow system_app sysfs_qc:dir search;
+
 # Allow PocketMode to work
 allow system_app sysfs_fpc_proximity:file rw_file_perms;
 
