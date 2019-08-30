@@ -111,6 +111,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
     $(VENDOR_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 TARGET_HAS_NO_WLAN_STATS := true
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
