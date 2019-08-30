@@ -164,7 +164,9 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.power.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc 
+    ueventd.qcom.rc \
+		init.spectrum.rc \
+		init.spectrum.sh
 
 # Display
 PRODUCT_PACKAGES += \
@@ -388,7 +390,9 @@ PRODUCT_PACKAGES += \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
-    telephony-ext 
+    telephony-ext \
+    tcmiface \
+    qcrilhook
 
 
 # TextClassifier
