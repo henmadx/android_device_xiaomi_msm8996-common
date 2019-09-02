@@ -345,8 +345,8 @@ PRODUCT_PACKAGES += \
 
 #QTI Performance
 PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
+  QPerformance \
+  UxPerformance
 
 PRODUCT_GENERIC_PROPERTIES += \
     vendor.enable_prefetch=1 \
@@ -394,7 +394,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext \
     tcmiface \
-    qcrilhook
+#    qcrilhook
 
 
 # TextClassifier
