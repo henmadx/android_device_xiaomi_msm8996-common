@@ -28,6 +28,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
+#Miui Camera
+$(call inherit-product-if-exists, $(LOCAL_PATH)/miuicamera/miuicamera.mk)
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
