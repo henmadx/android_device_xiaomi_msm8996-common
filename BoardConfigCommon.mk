@@ -113,16 +113,17 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 TARGET_HAS_NO_WLAN_STATS := true
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 
-# Enable dex pre-opt to speed up initial boot
+# Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_DEBUG_INFO := false
+      USE_DEX2OAT_DEBUG := false
+      DONT_DEXPREOPT_PREBUILTS := true
+      WITH_DEXPREOPT_PIC := true
       WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
   endif
 endif
-PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # Display
 BOARD_USES_ADRENO := true
