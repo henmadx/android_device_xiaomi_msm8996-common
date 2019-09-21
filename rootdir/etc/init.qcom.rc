@@ -215,6 +215,8 @@ on early-boot
     write /sys/kernel/boot_slpi/boot 1
     chown root audio /sys/kernel/boot_adsp/boot
 
+    exec u:r:qti_init_shell:s0 -- /etc/init.qcom.early_boot.sh
+
     # vendor.health-hal needs to be able to RW
     chown system system /sys/devices/soc/qpnp-fg-22/cycle_counts_bins
     # HardwareInfo needs to be able to read CC bins
@@ -512,6 +514,12 @@ service loc_launcher /vendor/bin/loc_launcher
     user gps
     group gps
     writepid /dev/cpuset/system-background/tasks
+
+service power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
