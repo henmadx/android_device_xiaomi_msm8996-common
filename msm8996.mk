@@ -23,6 +23,10 @@ $(call inherit-product, vendor/xiaomi/msm8996-common/msm8996-common-vendor.mk)
 #Miui Camera
 $(call inherit-product-if-exists, $(LOCAL_PATH)/miuicamera/miuicamera.mk)
 
+# AR CONFIG
+PRODUCT_COPY_FILES += \
+   device/xiaomi/msm8996-common/configs/android.hardware.camera.ar.xml:vendor/etc/permissions/android.hardware.camera.ar.xml
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
